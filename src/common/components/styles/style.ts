@@ -1,4 +1,4 @@
-import wip from "@common/Temp/images/wip.svg";
+import wip from "@common/temp/images/wip.svg";
 
 export const LoaderStyle = {
   color: "#fff",

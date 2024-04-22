@@ -1,7 +1,7 @@
 import { color } from "@global/colors";
 import { fontSize, fontWeight } from "@global/font";
 import { Box, Typography } from "@mui/material";
-import EmptyBowl from "@common/Temp/images/Empty.jpg";
+import EmptyBowl from "@common/temp/images/Empty.jpg";
 import { style } from "./style";
 
 const ProductNotAvailable = () => (
