@@ -17,8 +17,9 @@ import ListItemText from "@mui/material/ListItemText";
 import InboxIcon from "@mui/icons-material/MoveToInbox";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import { MouseEvent, useState } from "react";
-
+import { useRouter } from "next/router";
 import { displayFlexAlignCenter } from "@global/global.style";
+
 import { title } from "./styles";
 
 export type Anchor = "top" | "left" | "bottom" | "right";
@@ -30,6 +31,7 @@ type HeaderType = {
 };
 
 const Header = ({ state, toggleDrawer, filterDrawer }: HeaderType) => {
+  const router = useRouter();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     useState<null | HTMLElement>(null);
@@ -179,7 +181,11 @@ const Header = ({ state, toggleDrawer, filterDrawer }: HeaderType) => {
       >
         <Toolbar>
           <Box sx={displayFlexAlignCenter} justifyContent="space-between">
-            <Box width="fit-content">
+            <Box
+              width="fit-content"
+              sx={{ cursor: "pointer" }}
+              onClick={() => router.push("/")}
+            >
               <Typography noWrap component="h1" variant="h5" sx={title}>
                 Swad Gharana
               </Typography>

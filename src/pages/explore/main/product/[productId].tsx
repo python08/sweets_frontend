@@ -33,7 +33,6 @@ Product.getLayout = function getLayout(page: ReactElement) {
 
 export const getStaticPaths = async () => {
   // FP
-  // generate static pages during build
   // create api to fetch ids only
   const products = await getAllProducts();
   const paths = products.map((product: ProductsType) => ({
@@ -58,5 +57,6 @@ export async function getStaticProps(context: any) {
       products: products.error ? [] : products,
       productDetails: productDetails.error ? {} : productDetails,
     },
+    revalidate: 60,
   };
 }

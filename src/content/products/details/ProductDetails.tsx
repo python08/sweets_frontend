@@ -90,7 +90,11 @@ const ProductDetails = (props: ProductDetailsProps) => {
       </Box>
       <Box>
         <Box>
-          <Typography variant="subtitle2" fontSize={fontSize[6]}>
+          <Typography
+            variant="subtitle2"
+            fontSize={fontSize[6]}
+            fontWeight={fontWeight[1]}
+          >
             You may also like…
           </Typography>
         </Box>

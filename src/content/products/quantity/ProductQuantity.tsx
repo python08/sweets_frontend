@@ -16,7 +16,7 @@ const ProductQuantity = (props: ProductQuantityProps) => {
     if (action === "add") {
       if (quantity >= 0 && quantity < 10) setQuantity(quantity + 1);
     } else if (action === "minus") {
-      if (quantity !== 0) setQuantity(quantity - 1);
+      if (quantity !== 1) setQuantity(quantity - 1);
     }
   };
   return (

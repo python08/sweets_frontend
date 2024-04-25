@@ -42,5 +42,6 @@ export async function getStaticProps() {
       welcomeVideo: welcomeVideo.error ? null : welcomeVideo,
       updates: updates.error ? [] : updates,
     },
+    revalidate: 60,
   };
 }

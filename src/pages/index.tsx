@@ -29,7 +29,7 @@ export default function Page(props: LandingPageProps) {
   const topSellingProduct = [
     "65902b312408fbea9cdb31f0",
     "659959de4ce59d1b67153a65",
-    "65902c112408fbea9cdb31f4",
+    "662946f558a3efd381a344f8",
   ];
 
   const getMainImage = (smallSize: boolean) => (
@@ -181,5 +181,6 @@ export async function getStaticProps() {
     props: {
       products: products.error ? [] : products,
     },
+    revalidate: 60,
   };
 }

@@ -9,7 +9,7 @@ type WelcomeVideoProps = {
 
 const WelcomeVideo = ({ welcomeVideo }: WelcomeVideoProps) => {
   let welcomeVideoLink = "";
-  if (welcomeVideo[0] && welcomeVideo[0].link) {
+  if (welcomeVideo && welcomeVideo[0] && welcomeVideo[0].link) {
     welcomeVideoLink = welcomeVideo[0].link;
   }
 
