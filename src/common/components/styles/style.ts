@@ -13,7 +13,9 @@ export const WhatsappShareStyle = {
   height: "2.5rem",
   width: "90%",
   color: "#2ed56c",
+  border: "1px solid #2ed56c",
   borderBlockColor: "#2ed56c",
+  fontSize: "0.8rem",
 };
 
 export const WipBg = {

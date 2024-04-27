@@ -9,12 +9,16 @@ export const color = {
     2: "#560BAD", // chryslerBlue
   },
   main: {
+    primary: "#a7441c",
+    secondary: "#f3663a",
+    secondaryLight: "#f78d3d",
     warmPink: "#FF69B4",
     creamyYellow: "#FFFFCC",
     chocolateBrown: "#964B00",
     deliciousRed: "#FF0000",
     freshMintGreen: "#98FF98",
     voilet: "#9c27b0",
+    pureWhite: "#FFFFFF",
     softPastels: {
       lightPink: "#FFB6C1",
       mintGreen: "#BDFCC9",

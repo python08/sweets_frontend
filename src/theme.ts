@@ -1,6 +1,7 @@
 import { Roboto } from "next/font/google";
 import { createTheme } from "@mui/material/styles";
 import { green, red } from "@mui/material/colors";
+import { color } from "@global/colors";
 
 export const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -44,6 +45,25 @@ const rawTheme = createTheme({
     fontWeightLight: 300, // Work Sans
     fontWeightRegular: 400, // Work Sans
     fontWeightMedium: 700, // Roboto Condensed
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        // Name of the slot
+        root: {
+          // Some CSS
+          fontSize: "1rem",
+          color: color.main.primary,
+          borderRadius: "10px",
+          borderColor: color.main.primary,
+          "&:hover": {
+            backgroundColor: color.main.secondary,
+            border: `1px solid ${color.main.secondary}`,
+            color: color.main.pureWhite,
+          },
+        },
+      },
+    },
   },
 });
 

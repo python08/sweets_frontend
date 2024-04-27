@@ -7,7 +7,7 @@ const boxflex = {
 };
 
 const container = {
-  backgroundColor: color.main.softPastels.lavender, // "rgba(0,0,0,0.3)",
+  backgroundColor: color.main.primary, // "rgba(0,0,0,0.3)",
   padding: "2rem 1rem",
   height: "auto",
   width: "100%",

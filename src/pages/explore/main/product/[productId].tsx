@@ -9,7 +9,7 @@ import Explore from "../..";
 
 type ProductViewProps = {
   products: ProductsType[];
-  productDetails: any;
+  productDetails: ProductsType;
 };
 
 const Product = (props: ProductViewProps) => {

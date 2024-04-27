@@ -37,6 +37,7 @@ const ProductDetails = (props: ProductDetailsProps) => {
             variant="h1"
             fontSize={fontSize[9]}
             fontWeight={fontWeight[1]}
+            color={color.main.primary}
           >
             {title}
           </Typography>

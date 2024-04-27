@@ -2,8 +2,8 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
 import Badge from "@mui/material/Badge";
+import Image from "next/image";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
 import AccountCircle from "@mui/icons-material/AccountCircle";
@@ -18,9 +18,13 @@ import InboxIcon from "@mui/icons-material/MoveToInbox";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
 import { MouseEvent, useState } from "react";
 import { useRouter } from "next/router";
-import { displayFlexAlignCenter } from "@global/global.style";
+import {
+  displayFlexAlignCenter,
+  webkitTapHighlightColor,
+} from "@global/global.style";
+import { ButtonBase } from "@mui/material";
 
-import { title } from "./styles";
+import logo from "../../../../public/assests/logo.svg";
 
 export type Anchor = "top" | "left" | "bottom" | "right";
 
@@ -36,7 +40,7 @@ const Header = ({ state, toggleDrawer, filterDrawer }: HeaderType) => {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     useState<null | HTMLElement>(null);
 
-  // FP
+  // FP dark mode feature
   // const theme = useTheme();
   // const { palette } = theme;
   // const { mode } = palette;
@@ -181,14 +185,17 @@ const Header = ({ state, toggleDrawer, filterDrawer }: HeaderType) => {
       >
         <Toolbar>
           <Box sx={displayFlexAlignCenter} justifyContent="space-between">
-            <Box
-              width="fit-content"
-              sx={{ cursor: "pointer" }}
-              onClick={() => router.push("/")}
-            >
-              <Typography noWrap component="h1" variant="h5" sx={title}>
-                Swad Gharana
-              </Typography>
+            <Box sx={{ height: "60px", width: "130px", position: "relative" }}>
+              <ButtonBase component="div">
+                <Image
+                  src={logo.src}
+                  alt="swad_gharana"
+                  height={60}
+                  width={110}
+                  onClick={() => router.push("/")}
+                  style={{ cursor: "pointer", ...webkitTapHighlightColor }}
+                />
+              </ButtonBase>
             </Box>
 
             <Box>

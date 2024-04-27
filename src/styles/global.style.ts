@@ -8,3 +8,7 @@ export const displayFlexAlignCenter = {
   display: "flex",
   alignItems: "center",
 };
+
+export const webkitTapHighlightColor = {
+  WebkitTapHighlightColor: "transparent",
+};

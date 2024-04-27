@@ -4,13 +4,15 @@ import Link from "next/link";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { Grid, Typography, Box, Button } from "@mui/material";
-import { heroDescriptionStyle, style } from "@content/landing-page/style";
+import { style } from "@content/landing-page/style";
 import { ProductsType } from "@common/temp/temp";
 import GridViewProductCard from "@content/products/card/GridViewProductCard";
+import { color } from "@global/colors";
+import Hero from "@content/landing-page/Hero";
+import HeroDescription from "@content/landing-page/HeroDescription";
 
 import { getAllProducts } from "src/apis/product/product";
 import ModakImage from "../../public/assests/Modak.jpg";
-import KaranjiImage from "../../public/assests/Karanji.jpg";
 
 type LandingPageProps = {
   products: ProductsType[];
@@ -22,7 +24,6 @@ export default function Page(props: LandingPageProps) {
 
   const theme = useTheme();
   const lgDown = useMediaQuery(theme.breakpoints.down("lg"));
-  const lgUp = useMediaQuery(theme.breakpoints.up("lg"));
   const xlUp = useMediaQuery(theme.breakpoints.up("xl"));
 
   // FP sort top selling products from all products
@@ -46,25 +47,6 @@ export default function Page(props: LandingPageProps) {
     </Box>
   );
 
-  const getSecondaryImage = () => (
-    <Box sx={style.secondaryImageContainer}>
-      <Image
-        src={KaranjiImage.src}
-        alt="Modak"
-        fill
-        style={{ objectFit: "cover", zIndex: -1 }}
-      />
-    </Box>
-  );
-
-  const getHeroDescription = (smallSize: boolean) => {
-    const description =
-      "Indulge in the rich flavours of authentic homemade Indian sweets and savoury delights at our online hub.";
-    const extra =
-      " Explore a culinary journey that celebrates tradition and taste.";
-    return smallSize ? `${description}` : `${description}${extra}`;
-  };
-
   return (
     <Grid container>
       {/* Left side: Title and description */}
@@ -79,41 +61,8 @@ export default function Page(props: LandingPageProps) {
       >
         <Box style={style.leftSection(lgDown)}>
           <Box textAlign="left">
-            <Box position="relative" height="50vh">
-              <Box p={lgDown ? "2rem 1rem 0rem" : "6rem"}>
-                <Typography
-                  variant="h1"
-                  fontSize={lgDown ? "5rem" : "8rem"}
-                  fontWeight={400}
-                >
-                  Swad
-                </Typography>
-                <Typography
-                  variant="h1"
-                  fontSize={lgDown ? "5rem" : "8rem"}
-                  fontWeight={400}
-                  lineHeight={0.8}
-                >
-                  Gharana
-                </Typography>
-              </Box>
-            </Box>
-            <Box sx={style.heroDescriptionContainer(lgDown)}>
-              <Typography
-                variant="body1"
-                gutterBottom
-                fontSize="2rem"
-                fontWeight={200}
-                sx={
-                  lgDown
-                    ? { padding: "0rem 1rem 1rem 1rem" }
-                    : heroDescriptionStyle(xlUp)
-                }
-              >
-                {getHeroDescription(lgDown)}
-              </Typography>
-              {!lgDown && getSecondaryImage()}
-            </Box>
+            <Hero lgDown={lgDown} />
+            <HeroDescription lgDown={lgDown} xlUp={xlUp} />
             {lgDown && getMainImage(true)}
           </Box>
         </Box>
@@ -129,7 +78,13 @@ export default function Page(props: LandingPageProps) {
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} height="100vh">
         <Grid container>
           <Grid item xs={12} textAlign="center" mt="3rem">
-            <Typography variant="h2" fontSize="3rem" fontWeight={600} p="1rem">
+            <Typography
+              variant="h2"
+              fontSize="3rem"
+              fontWeight={600}
+              p="1rem"
+              color={color.main.primary}
+            >
               TOP SELLING
             </Typography>
           </Grid>
@@ -159,7 +114,7 @@ export default function Page(props: LandingPageProps) {
           </Grid>
           <Grid item xs={12} textAlign="center" p="2rem">
             <Link href="/products">
-              <Button variant="outlined" size="large" sx={style.viewProducts}>
+              <Button variant="outlined" size="large">
                 VIEW PRODUCTS
               </Button>
             </Link>

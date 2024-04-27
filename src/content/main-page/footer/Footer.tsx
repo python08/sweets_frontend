@@ -1,9 +1,10 @@
+import Link from "next/link";
 import { Box, Grid, Typography } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import GoogleIcon from "@mui/icons-material/Google";
 import { fontWeight } from "@global/font";
 import { color } from "@global/colors";
-import Link from "next/link";
+import { webkitTapHighlightColor } from "@global/global.style";
 
 import { style } from "./style";
 
@@ -17,7 +18,7 @@ const Footer = () => (
               variant="subtitle2"
               component="p"
               fontWeight={fontWeight[0]}
-              color={color.fontColors.softGray}
+              color={color.main.pureWhite}
             >
               SMD mahila gruh udyog is small local business owner. We sell
               delicious homemade and also wholesale food products at affordable
@@ -26,7 +27,13 @@ const Footer = () => (
           </Box>
           <Box sx={style.shareLinks}>
             <FacebookIcon />
-            <Link href="https://www.google.com/search?q=smd+mahila+gruh+udyog+kalyan&rlz=1C1CHBF_enIN1080IN1080&oq=sm&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDkyBggCEEUYOzIGCAMQRRg7MgcIBBAAGI8CMgcIBRAAGI8CMgYIBhBFGD0yBggHEEUYPdIBBzczOWowajGoAgCwAgA&sourceid=chrome&ie=UTF-8">
+            <Link
+              style={{
+                color: color.main.pureWhite,
+                ...webkitTapHighlightColor,
+              }}
+              href="https://www.google.com/search?q=smd+mahila+gruh+udyog+kalyan&rlz=1C1CHBF_enIN1080IN1080&oq=sm&gs_lcrp=EgZjaHJvbWUqBggAEEUYOzIGCAAQRRg7MgYIARBFGDkyBggCEEUYOzIGCAMQRRg7MgcIBBAAGI8CMgcIBRAAGI8CMgYIBhBFGD0yBggHEEUYPdIBBzczOWowajGoAgCwAgA&sourceid=chrome&ie=UTF-8"
+            >
               <GoogleIcon />
             </Link>
           </Box>

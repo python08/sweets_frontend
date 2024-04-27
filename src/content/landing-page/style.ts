@@ -43,16 +43,26 @@ const heroDescriptionContainer = (lgDown: boolean) => ({
   backgroundColor: lgDown ? "" : "rgba(0,0,0,0.4)",
 });
 
-const viewProducts = {
-  borderRadius: "10px",
-  color: "black",
-  borderColor: "black",
-};
+const houseImage = (lgDown: boolean) => ({
+  height: lgDown ? "5rem" : "7.5rem",
+  width: lgDown ? "5rem" : "7.5rem",
+  display: "inline-block",
+  marginLeft: "2rem",
+  marginBottom: "1rem",
+});
+
+const hero1 = (color: any, lgDown: boolean) => ({
+  textShadow: lgDown
+    ? ""
+    : `-2px -2px 0 ${color.main.primary}, 2px -2px 0 ${color.main.primary},-2px 2px 0 ${color.main.primary},2px 2px 0 ${color.main.primary}`,
+  color: color.main.pureWhite,
+});
 
 export const style = {
   mainImageContainer,
   secondaryImageContainer,
   leftSection,
   heroDescriptionContainer,
-  viewProducts,
+  houseImage,
+  hero1,
 };
