@@ -11,7 +11,7 @@ type HeroType = {
 
 const Hero = ({ lgDown }: HeroType) => (
   <Box position="relative" height="50vh">
-    <Box p={lgDown ? "2rem 1rem 0rem" : "6rem"}>
+    <Box p={lgDown ? "2rem 1rem 0rem" : "4rem"}>
       <Box sx={displayFlexAlignCenter} justifyContent="flex-start">
         <Typography
           variant="h1"
@@ -33,6 +33,16 @@ const Hero = ({ lgDown }: HeroType) => (
         color={color.main.primary}
       >
         Gharana{" "}
+      </Typography>
+      <Typography
+        variant="h1"
+        fontSize={lgDown ? "1rem" : "1.3rem"}
+        fontWeight={200}
+        lineHeight={1}
+        color={lgDown ? color.main.pureWhite : color.main.primary}
+        p="0.5rem"
+      >
+        By SMD Mahila Gruh Udyog.
       </Typography>
     </Box>
   </Box>

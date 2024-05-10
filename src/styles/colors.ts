@@ -19,6 +19,7 @@ export const color = {
     freshMintGreen: "#98FF98",
     voilet: "#9c27b0",
     pureWhite: "#FFFFFF",
+    black: "#000000",
     softPastels: {
       lightPink: "#FFB6C1",
       mintGreen: "#BDFCC9",
