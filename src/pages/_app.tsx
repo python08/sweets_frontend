@@ -75,7 +75,10 @@ export default function MyApp(props: AppPropsWithLayout) {
           property="og:description"
           content="Welcome to our online sweet shop offering a delightful collection of authentic, homemade and healthy Indian sweets. Indulge in traditional and gourmet Indian sweets, including handcrafted mithai, artisanal confections, and sweet treats. Explore our wide range of exquisite desserts, perfect for festive celebrations or gifting options. Order now and experience the rich flavors of India's finest sweet delicacies."
         />
-        <meta property="og:image" content="../../public/assests/logo.svg" />
+        <meta
+          property="og:image"
+          content="https://sweettoothbucket.s3.ap-south-1.amazonaws.com/assest/logo.jpg"
+        />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="twitter:domain" content="swadgharana.in" />
