@@ -10,6 +10,8 @@ import GridViewProductCard from "@content/products/card/GridViewProductCard";
 import { color } from "@global/colors";
 import Hero from "@content/landing-page/Hero";
 import HeroDescription from "@content/landing-page/HeroDescription";
+import FallBack from "@components/ErrorFallBack/FallBack";
+import { isEmpty } from "lodash";
 
 import { getAllProducts } from "src/apis/product/product";
 import ModakImage from "../../public/assests/Modak.jpg";
@@ -22,15 +24,19 @@ type LandingPageProps = {
 export default function Page(props: LandingPageProps) {
   const { products } = props;
 
+  if (isEmpty(products)) {
+    return <FallBack />;
+  }
+
   const theme = useTheme();
   const lgDown = useMediaQuery(theme.breakpoints.down("lg"));
   const xlUp = useMediaQuery(theme.breakpoints.up("xl"));
 
   // FP sort top selling products from all products
   const topSellingProduct = [
-    "65902b312408fbea9cdb31f0",
-    "659959de4ce59d1b67153a65",
-    "662946f558a3efd381a344f8",
+    "666867fa4f239bc9b7b3cd58",
+    "66686cbe4f239bc9b7b3cd5b",
+    "6665debd695aea905289f3d8",
   ];
 
   const getMainImage = (smallSize: boolean) => (
