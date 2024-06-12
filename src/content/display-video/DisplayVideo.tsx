@@ -1,23 +1,13 @@
 import { Box } from "@mui/material";
 import VideoPlayer from "@components/VideoPlayer/VideoPlayer";
+import { welcomeVideoUrl } from "src/apis/constant/constant";
 
 import { welcomeVideoStyle } from "./style";
 
-type WelcomeVideoProps = {
-  welcomeVideo: any;
-};
-
-const WelcomeVideo = ({ welcomeVideo }: WelcomeVideoProps) => {
-  let welcomeVideoLink = "";
-  if (welcomeVideo && welcomeVideo[0] && welcomeVideo[0].link) {
-    welcomeVideoLink = welcomeVideo[0].link;
-  }
-
-  return (
-    <Box sx={welcomeVideoStyle}>
-      <VideoPlayer src={welcomeVideoLink} />
-    </Box>
-  );
-};
+const WelcomeVideo = () => (
+  <Box sx={welcomeVideoStyle}>
+    <VideoPlayer src={welcomeVideoUrl} />
+  </Box>
+);
 
 export default WelcomeVideo;

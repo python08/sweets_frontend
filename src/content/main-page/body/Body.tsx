@@ -12,7 +12,7 @@ import { style } from "./style";
 import { BodyProps } from "./model";
 
 const Body = (props: BodyProps) => {
-  const { products, welcomeVideo, updates } = props;
+  const { products, updates } = props;
 
   if (!products) return null;
 
@@ -22,7 +22,7 @@ const Body = (props: BodyProps) => {
     <>
       <Grid container>
         <Grid item xs={12}>
-          <WelcomeVideo welcomeVideo={welcomeVideo} />
+          <WelcomeVideo />
         </Grid>
       </Grid>
       <Box sx={style.main}>

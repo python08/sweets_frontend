@@ -1,9 +1,9 @@
-const serverUrl = "http://3.108.54.66:3001";
+import { serverUrl } from "./constant/constant";
 
 export async function loadData(route: string) {
   // Call an external API endpoint to get posts
   try {
-    const res = await fetch(`${serverUrl}/${route}`);
+    const res = await fetch(`${serverUrl}/api/${route}`);
 
     if (res.status >= 400) {
       // This will activate the closest `error.js` Error Boundary
