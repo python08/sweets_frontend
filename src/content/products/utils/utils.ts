@@ -11,7 +11,7 @@ export const getProductByCategory = (
       );
     case Categories.Others:
       return products.filter(
-        (product) => product.category === Categories.Ladoo
+        (product) => product.category === Categories.Others
       );
     default:
       return products;
