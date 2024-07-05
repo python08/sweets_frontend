@@ -10,7 +10,7 @@ export type ProductsType = {
   description: string;
   category: CategoriesKeys;
   festivalName: FestivalsE;
-  active?: boolean;
+  isActive?: boolean;
 };
 
 export const Categories = {

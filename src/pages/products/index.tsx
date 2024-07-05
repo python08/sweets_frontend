@@ -27,9 +27,14 @@ Index.getLayout = function getLayout(page: ReactElement) {
 };
 
 export async function getStaticProps() {
-  const products = await getAllProducts();
+  let products = await getAllProducts();
   const updates = await getUpdates();
   // const festivals = await getAllFestivals();
+  if (products.error) {
+    products = [];
+  } else {
+    products = products.filter((product: ProductsType) => product.isActive);
+  }
 
   return {
     props: {
