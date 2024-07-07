@@ -1,4 +1,4 @@
-import { FestivalsE } from "@common/constants/festivals";
+import { Category, Festival } from "@content/products/constant/type";
 
 export type ProductsType = {
   _id: string;
@@ -8,8 +8,8 @@ export type ProductsType = {
   price: string;
   link: string;
   description: string;
-  category: CategoriesKeys;
-  festivalName: FestivalsE;
+  category: Category;
+  festivalName: Festival;
   isActive?: boolean;
 };
 
