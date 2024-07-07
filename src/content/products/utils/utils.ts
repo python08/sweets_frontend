@@ -7,11 +7,11 @@ export const getProductByCategory = (
   switch (category) {
     case Categories.Ladoo:
       return products.filter(
-        (product) => product.category === Categories.Ladoo
+        (product) => product.category.name === Categories.Ladoo
       );
     case Categories.Others:
       return products.filter(
-        (product) => product.category === Categories.Others
+        (product) => product.category.name === Categories.Others
       );
     default:
       return products;

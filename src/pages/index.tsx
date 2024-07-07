@@ -24,7 +24,8 @@ type LandingPageProps = {
 export default function Page(props: LandingPageProps) {
   const { products } = props;
 
-  if (isEmpty(products)) {
+  // FP temp changed changed for maintenance
+  if (!isEmpty(products)) {
     return <FallBack />;
   }
 
