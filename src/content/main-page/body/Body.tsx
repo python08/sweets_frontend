@@ -13,7 +13,6 @@ import { BodyProps } from "./model";
 
 const Body = (props: BodyProps) => {
   const { products, updates } = props;
-
   if (!products) return null;
 
   const ladoos = getProductByCategory(products, Categories.Ladoo);
