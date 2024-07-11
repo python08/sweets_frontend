@@ -5,7 +5,7 @@ import { welcomeVideoStyle } from "./style";
 
 const WelcomeVideo = () => (
   <Box sx={welcomeVideoStyle}>
-    <VideoPlayer src={process.env.WELCOME_VIDEO_URL || ""} />
+    <VideoPlayer src={process.env.NEXT_PUBLIC_WELCOME_VIDEO_URL || ""} />
   </Box>
 );
 

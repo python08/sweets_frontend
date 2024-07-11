@@ -23,8 +23,8 @@ type LandingPageProps = {
 /* eslint-disable */
 export default function Page(props: LandingPageProps) {
   const { products } = props;
-
-  // FP temp changed changed for maintenance
+  console.log("products: ", products);
+  // FP temp changed for maintenance
   if (isEmpty(products)) {
     return <FallBack />;
   }
