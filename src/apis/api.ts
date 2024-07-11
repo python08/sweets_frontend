@@ -1,7 +1,9 @@
 export async function loadData(route: string) {
   // Call an external API endpoint to get posts
   try {
-    const res = await fetch(`${process.env.SERVER_URL}/api/${route}`);
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/${route}`
+    );
 
     if (res.status >= 400) {
       // This will activate the closest `error.js` Error Boundary
