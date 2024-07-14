@@ -12,9 +12,15 @@ const Hero = ({ lgDown }: HeroType) => (
   <Box position="relative" height="50vh">
     <Box p={lgDown ? "2rem 1rem 0rem" : "4rem"}>
       <Box>
-        <Image src={logo.src} alt="swad_gharana" height={260} width={470} />
+        <Image
+          src={logo.src}
+          alt="swad_gharana"
+          layout="responsive"
+          height={260}
+          width={470}
+        />
       </Box>
-      <Box mt="-2rem" ml="1rem">
+      <Box mt="1rem" ml="1rem">
         <Typography
           variant="h1"
           fontSize={lgDown ? "1rem" : "1.3rem"}

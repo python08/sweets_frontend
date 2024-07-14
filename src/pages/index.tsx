@@ -64,7 +64,7 @@ export default function Page(props: LandingPageProps) {
         md={12}
         lg={6}
         xl={6}
-        pr={lgDown ? "" : "1rem"}
+        pr={lgDown ? "0.5rem" : "1rem"}
       >
         <Box style={style.leftSection(lgDown)}>
           <Box textAlign="left">
