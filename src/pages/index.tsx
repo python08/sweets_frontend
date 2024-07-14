@@ -75,7 +75,7 @@ export default function Page(props: LandingPageProps) {
         </Box>
       </Grid>
 
-      {/* Right side: Circular image input */}
+      {/* Right side */}
       {!lgDown && (
         <Grid item xs={0} sm={0} md={0} lg={6} xl={6} pl="1rem">
           {getMainImage(false)}

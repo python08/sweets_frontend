@@ -1,9 +1,8 @@
 import { Box, Typography } from "@mui/material";
-import { displayFlexAlignCenter } from "@global/global.style";
+import Image from "next/image";
 import { color } from "@global/colors";
 
-import house from "../../../public/assests/logo_house.svg";
-import { style } from "./style";
+import logo from "../../../public/assests/logo.svg";
 
 type HeroType = {
   lgDown: boolean;
@@ -12,38 +11,20 @@ type HeroType = {
 const Hero = ({ lgDown }: HeroType) => (
   <Box position="relative" height="50vh">
     <Box p={lgDown ? "2rem 1rem 0rem" : "4rem"}>
-      <Box sx={displayFlexAlignCenter} justifyContent="flex-start">
+      <Box>
+        <Image src={logo.src} alt="swad_gharana" height={260} width={470} />
+      </Box>
+      <Box mt="-2rem" ml="1rem">
         <Typography
           variant="h1"
-          fontSize={lgDown ? "5rem" : "8rem"}
-          fontWeight={400}
-          sx={style.hero1(color, lgDown)}
+          fontSize={lgDown ? "1rem" : "1.3rem"}
+          fontWeight={200}
+          lineHeight={1}
+          color={lgDown ? color.main.pureWhite : color.main.primary}
         >
-          Swad
+          By SMD Mahila Gruh Udyog.
         </Typography>
-        {/* FP change to image next js */}
-        {/* eslint-disable */}
-        <img src={house.src} alt="swad_ghar" style={style.houseImage(lgDown)} />
       </Box>
-      <Typography
-        variant="h1"
-        fontSize={lgDown ? "5rem" : "8rem"}
-        fontWeight={400}
-        lineHeight={0.8}
-        color={color.main.primary}
-      >
-        Gharana{" "}
-      </Typography>
-      <Typography
-        variant="h1"
-        fontSize={lgDown ? "1rem" : "1.3rem"}
-        fontWeight={200}
-        lineHeight={1}
-        color={lgDown ? color.main.pureWhite : color.main.primary}
-        p="0.5rem"
-      >
-        By SMD Mahila Gruh Udyog.
-      </Typography>
     </Box>
   </Box>
 );
