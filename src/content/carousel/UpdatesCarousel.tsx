@@ -1,56 +1,31 @@
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import { Box } from "@mui/material";
-import { useEffect, useState } from "react";
-import { useSwipeable } from "react-swipeable";
 import Card from "@components/Card/component/Card";
+import { useCarousel } from "@common/hooks/UseCarousel";
 
-import { style } from "./style";
-import { CarouselType, SliderCardData } from "./model";
+import { UpdatesCarouselStyle } from "./style";
+import { UpdatesCarouselProps, SliderCardData } from "./model";
 
-const Carousel = ({ sliderData }: CarouselType) => {
-  const [current, setCurrent] = useState(0);
-  const { length } = sliderData;
-
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1);
-  };
-
-  const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1);
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      nextSlide();
-    }, 9000);
-
-    return () => {
-      if (interval) {
-        clearInterval(interval);
-      }
-    };
-  });
-
-  const handler = useSwipeable({
-    onSwipedLeft: () => nextSlide(),
-    onSwipedRight: () => prevSlide(),
-  });
+const UpdatesCarousel = ({ sliderData }: UpdatesCarouselProps) => {
+  const { current, handler, prevSlide, nextSlide } = useCarousel(
+    sliderData.length
+  );
 
   if (!Array.isArray(sliderData) || sliderData.length <= 0) {
     return null;
   }
 
   return (
-    <Box sx={style.SliderContainer} {...handler}>
-      <Box sx={style.LeftArrow}>
+    <Box sx={UpdatesCarouselStyle.SliderContainer} {...handler}>
+      <Box sx={UpdatesCarouselStyle.LeftArrow}>
         <KeyboardArrowLeftIcon
           fontSize="large"
           onClick={prevSlide}
           sx={{ color: "#E3E5E7" }}
         />
       </Box>
-      <Box sx={style.RightArrow}>
+      <Box sx={UpdatesCarouselStyle.RightArrow}>
         <KeyboardArrowRightIcon
           fontSize="large"
           onClick={nextSlide}
@@ -61,7 +36,11 @@ const Carousel = ({ sliderData }: CarouselType) => {
         const { updateTitle, updateDescription, image } = data;
         return (
           <Box
-            sx={index === current ? style.SlideActive : style.Slide}
+            sx={
+              index === current
+                ? UpdatesCarouselStyle.SlideActive
+                : UpdatesCarouselStyle.Slide
+            }
             key={updateTitle}
           >
             {index === current && (
@@ -70,7 +49,7 @@ const Carousel = ({ sliderData }: CarouselType) => {
                 title={updateTitle}
                 description={updateDescription}
                 img={image}
-                sx={style.ProductCard}
+                sx={UpdatesCarouselStyle.ProductCard}
                 cardMediaHeight="200"
               />
             )}
@@ -81,4 +60,4 @@ const Carousel = ({ sliderData }: CarouselType) => {
   );
 };
 
-export default Carousel;
+export default UpdatesCarousel;

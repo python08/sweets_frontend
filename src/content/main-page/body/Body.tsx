@@ -3,10 +3,10 @@ import FlexViewProductList from "@content/products/view/flex/ProductList";
 import Updates from "@content/updates/Updates";
 import { Box, Grid } from "@mui/material";
 import { Categories } from "@common/temp/temp";
-import WelcomeVideo from "@content/display-video/DisplayVideo";
 import { Headline } from "@components/Headline/Headline";
 import { Section } from "@content/products/constant/main";
 import { getProductByCategory } from "@content/products/utils/utils";
+import MainCarousel from "@content/carousel/MainCarousel";
 
 import { style } from "./style";
 import { BodyProps } from "./model";
@@ -21,7 +21,7 @@ const Body = (props: BodyProps) => {
     <>
       <Grid container>
         <Grid item xs={12}>
-          <WelcomeVideo />
+          <MainCarousel />
         </Grid>
       </Grid>
       <Box sx={style.main}>

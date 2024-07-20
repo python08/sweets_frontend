@@ -6,7 +6,6 @@ const sliderContainer = {
   height: "100%",
   width: "100%",
   overflow: "hidden",
-  borderRadius: "10px",
   border: "none",
 };
 
@@ -36,6 +35,7 @@ const slide = {
   opacity: 0,
   transitionDuration: "all .75s ease",
 };
+
 const slideActive = [
   slide,
   {
@@ -45,11 +45,36 @@ const slideActive = [
   },
 ];
 
-export const style = {
+export const UpdatesCarouselStyle = {
   SliderContainer: sliderContainer,
   LeftArrow: leftArrow,
   RightArrow: rightArrow,
   ProductCard: productCard,
   Slide: slide,
   SlideActive: slideActive,
+};
+
+const mainSlide = {
+  transitionDuration: "all .75s ease",
+};
+
+const mainSlideActive = [
+  slide,
+  {
+    opacity: 1,
+  },
+];
+
+const mainContainer = {
+  ...sliderContainer,
+  marginTop: "1rem",
+  maxHeight: "25rem",
+};
+
+export const MainCarouselStyle = {
+  SliderContainer: mainContainer,
+  LeftArrow: leftArrow,
+  RightArrow: rightArrow,
+  Slide: mainSlide,
+  SlideActive: mainSlideActive,
 };

@@ -4,6 +4,6 @@ export interface SliderCardData {
   image?: string;
 }
 
-export type CarouselType = {
+export type UpdatesCarouselProps = {
   sliderData: SliderCardData[];
 };

@@ -1,4 +1,4 @@
-import Carousel from "@content/carousel/Carousel";
+import UpdatesCarousel from "@content/carousel/UpdatesCarousel";
 import { Headline } from "@components/Headline/Headline";
 import { Box } from "@mui/material";
 
@@ -22,7 +22,7 @@ const Updates = (props: UpdatesProps) => {
           borderRadius: "10px",
         }}
       >
-        <Carousel sliderData={updates} />
+        <UpdatesCarousel sliderData={updates} />
       </Box>
     </>
   );
