@@ -1,10 +1,10 @@
 import { useRef } from "react";
 import { useRouter } from "next/router";
-import { Card, CardActionArea, Zoom } from "@mui/material";
+import { Box, Card, CardActionArea, Zoom } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { useIsVisible } from "@common/hooks/UseIsVisible";
+import Image from "next/image";
 
 type ProductCardType = {
   alt: string;
@@ -47,12 +47,17 @@ const FlexViewProductCard = (props: ProductCardType) => {
     >
       <CardActionArea onClick={() => handleNavigate(productId)}>
         <Zoom in={isVisible}>
-          <CardMedia
-            component="img"
-            image={img}
-            alt={alt}
+          <Box
             sx={{ height: `${cardMediaHeight}`, width: "10rem", opacity: 1 }}
-          />
+          >
+            <Image
+              src={img}
+              alt={alt}
+              fill
+              sizes="100vw"
+              style={{ objectFit: "cover" }}
+            />
+          </Box>
         </Zoom>
       </CardActionArea>
       <CardContent

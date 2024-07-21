@@ -1,25 +1,27 @@
 import { useRef } from "react";
 import { useRouter } from "next/router";
-import { Card, CardActionArea, SxProps, Theme, Zoom } from "@mui/material";
+import { Box, Card, CardActionArea, SxProps, Theme, Zoom } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { color } from "@global/colors";
 import { fontWeight } from "@global/font";
 import { useIsVisible } from "@common/hooks/UseIsVisible";
+import Image from "next/image";
 
 type ProductCardType = {
   title: string;
   description: string;
   img: any;
-  cardMediaHeight: string;
+  imgHeight: string;
+  contentHeight: string;
   productId: string;
   sx?: SxProps<Theme>;
 };
 
 const GridViewProductCard = (props: ProductCardType) => {
   const router = useRouter();
-  const { title, description, img, cardMediaHeight, sx, productId } = props;
+  const { title, description, img, sx, productId, imgHeight, contentHeight } =
+    props;
 
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useIsVisible(ref);
@@ -34,14 +36,25 @@ const GridViewProductCard = (props: ProductCardType) => {
     <Card sx={sx} ref={ref}>
       <CardActionArea onClick={() => handleNavigate(productId)}>
         <Zoom in={isVisible}>
-          <CardMedia
-            component="img"
-            height={cardMediaHeight}
-            image={img}
-            alt={title}
-          />
+          <Box
+            sx={{
+              position: "relative",
+              height: imgHeight,
+              opacity: 1,
+              overflow: "hidden",
+            }}
+          >
+            <Image
+              src={img}
+              alt={title}
+              fill
+              sizes="100vw"
+              style={{ objectFit: "cover" }}
+            />
+          </Box>
         </Zoom>
-        <CardContent sx={{ height: "7rem" }}>
+
+        <CardContent sx={{ height: contentHeight }}>
           <Typography
             gutterBottom
             variant="subtitle1"

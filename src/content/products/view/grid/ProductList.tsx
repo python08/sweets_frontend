@@ -8,10 +8,9 @@ import { Headline } from "../../../../common/components/Headline/Headline";
 
 type ProductListType = {
   products: ProductsType[];
-  height?: string;
 };
 
-const GridViewProductList = ({ products, height }: ProductListType) => (
+const GridViewProductList = ({ products }: ProductListType) => (
   <>
     <Box sx={{ textAlign: "center" }} pb="1rem">
       <Headline headLine="Elevate your taste buds with our curated selection of our top-selling sweets and gourmet delights." />
@@ -24,9 +23,10 @@ const GridViewProductList = ({ products, height }: ProductListType) => (
               title={product.name}
               description={product.description}
               img={product.link}
+              imgHeight="10rem"
+              contentHeight="6rem"
               /* eslint-disable */
               productId={product._id}
-              cardMediaHeight={height || "200"}
               sx={productList}
             />
           </Grid>

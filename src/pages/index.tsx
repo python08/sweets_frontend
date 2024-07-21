@@ -106,8 +106,9 @@ export default function Page(props: LandingPageProps) {
                     <GridViewProductCard
                       // eslint-disable
                       productId={_id}
-                      cardMediaHeight="260"
                       img={link}
+                      imgHeight="13rem"
+                      contentHeight="6rem"
                       title={name}
                       description={description}
                       sx={{
