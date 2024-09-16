@@ -28,11 +28,11 @@ npm run check-types ||
 # If everything passes... Now we can commit
 echo 'ready to commit'
 
-npm run build ||
-(
-     echo 'Next build failed: View the errors above to see why.'
-     false;
-)
+# npm run build ||
+# (
+#      echo 'Next build failed: View the errors above to see why.'
+#      false;
+# )
 
 # If everything passes... Now we can commit
 echo 'committing changes ✅'

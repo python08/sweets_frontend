@@ -18,7 +18,7 @@ const Product = (props: ProductViewProps) => {
   const { products, productDetails } = props;
 
   // url for metadata
-  const url = `${process.env.NEXT_PUBLIC_SERVER_URL}${router.asPath}`;
+  const url = `${process.env.NEXT_PUBLIC_DOMAIN}${router.asPath}`;
 
   if (isEmpty(productDetails)) return null;
   return (

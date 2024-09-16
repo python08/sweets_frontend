@@ -69,7 +69,7 @@ export default function Page(props: LandingPageProps) {
         name={metaData.title}
         description={metaData.description}
         image={metaData.image}
-        url={process.env.NEXT_PUBLIC_SERVER_URL || ""}
+        url={process.env.NEXT_PUBLIC_DOMAIN || ""}
       />
       <Grid container>
         {/* Left side: Title and description */}
