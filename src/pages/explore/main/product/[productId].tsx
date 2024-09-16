@@ -16,11 +16,19 @@ const Product = (props: ProductViewProps) => {
   const router = useRouter();
   const { productId } = router.query;
   const { products, productDetails } = props;
+
+  // url for metadata
+  const url = `${process.env.NEXT_PUBLIC_SERVER_URL}${router.asPath}`;
+
   if (isEmpty(productDetails)) return null;
   return (
     productId &&
     !Array.isArray(productId) && (
-      <ProductView products={products} productDetails={productDetails} />
+      <ProductView
+        products={products}
+        productDetails={productDetails}
+        url={url}
+      />
     )
   );
 };

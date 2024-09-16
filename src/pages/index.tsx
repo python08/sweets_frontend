@@ -12,6 +12,7 @@ import Hero from "@content/landing-page/Hero";
 import HeroDescription from "@content/landing-page/HeroDescription";
 import FallBack from "@components/ErrorFallBack/FallBack";
 import { isEmpty } from "lodash";
+import HeadMetaTag from "@components/meta-tag/HeadMetaTag";
 
 import { getAllProducts } from "src/apis/product/product";
 import ModakImage from "../../public/assests/Modak.jpg";
@@ -23,7 +24,7 @@ type LandingPageProps = {
 /* eslint-disable */
 export default function Page(props: LandingPageProps) {
   const { products } = props;
-  console.log("products: ", products.length);
+
   // FP temp changed for maintenance
   if (isEmpty(products)) {
     return <FallBack />;
@@ -53,83 +54,101 @@ export default function Page(props: LandingPageProps) {
       />
     </Box>
   );
+  // metadata
+  const metaData = {
+    title: "Swadgharana",
+    description:
+      "Welcome to our online sweet shop offering a delightful collection of authentic, homemade and healthy Indian sweets. Indulge in traditional and gourmet Indian sweets, including handcrafted mithai, artisanal confections, and sweet treats. Explore our wide range of exquisite desserts, perfect for festive celebrations or gifting options. Order now and experience the rich flavors of India's finest sweet delicacies.",
+    image:
+      "https://sweettoothbucket.s3.ap-south-1.amazonaws.com/assest/logo.jpg",
+  };
 
   return (
-    <Grid container>
-      {/* Left side: Title and description */}
-      <Grid
-        item
-        xs={12}
-        sm={12}
-        md={12}
-        lg={6}
-        xl={6}
-        pr={lgDown ? "0.5rem" : "1rem"}
-      >
-        <Box style={style.leftSection(lgDown)}>
-          <Box textAlign="left">
-            <Hero lgDown={lgDown} />
-            <HeroDescription lgDown={lgDown} xlUp={xlUp} />
-            {lgDown && getMainImage(true)}
+    <>
+      <HeadMetaTag
+        name={metaData.title}
+        description={metaData.description}
+        image={metaData.image}
+        url={process.env.NEXT_PUBLIC_SERVER_URL || ""}
+      />
+      <Grid container>
+        {/* Left side: Title and description */}
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          md={12}
+          lg={6}
+          xl={6}
+          pr={lgDown ? "0.5rem" : "1rem"}
+        >
+          <Box style={style.leftSection(lgDown)}>
+            <Box textAlign="left">
+              <Hero lgDown={lgDown} />
+              <HeroDescription lgDown={lgDown} xlUp={xlUp} />
+              {lgDown && getMainImage(true)}
+            </Box>
           </Box>
-        </Box>
-      </Grid>
-
-      {/* Right side */}
-      {!lgDown && (
-        <Grid item xs={0} sm={0} md={0} lg={6} xl={6} pl="1rem">
-          {getMainImage(false)}
         </Grid>
-      )}
 
-      <Grid item xs={12} sm={12} md={12} lg={12} xl={12} height="100vh">
-        <Grid container>
-          <Grid item xs={12} textAlign="center" mt="3rem">
-            <Typography
-              variant="h2"
-              fontSize="3rem"
-              fontWeight={600}
-              p="1rem"
-              color={color.main.primary}
-            >
-              TOP SELLING
-            </Typography>
+        {/* Right side */}
+        {!lgDown && (
+          <Grid item xs={0} sm={0} md={0} lg={6} xl={6} pl="1rem">
+            {getMainImage(false)}
           </Grid>
-          <Grid container spacing={3} mt="2rem">
-            {products
-              .filter((product) => topSellingProduct.indexOf(product._id) >= 0)
-              .map((productDetails) => {
-                const { _id, name, description, link } = productDetails;
-                return (
-                  // eslint-disable
-                  <Grid item xs={12} sm={12} md={12} lg={4} xl={4} key={_id}>
-                    <GridViewProductCard
-                      // eslint-disable
-                      productId={_id}
-                      img={link}
-                      imgHeight="13rem"
-                      contentHeight="6rem"
-                      title={name}
-                      description={description}
-                      sx={{
-                        borderRadius: "10px",
-                        margin: "2rem",
-                      }}
-                    />
-                  </Grid>
-                );
-              })}
-          </Grid>
-          <Grid item xs={12} textAlign="center" p="2rem">
-            <Link href="/products">
-              <Button variant="outlined" size="large">
-                VIEW PRODUCTS
-              </Button>
-            </Link>
+        )}
+
+        <Grid item xs={12} sm={12} md={12} lg={12} xl={12} height="100vh">
+          <Grid container>
+            <Grid item xs={12} textAlign="center" mt="3rem">
+              <Typography
+                variant="h2"
+                fontSize="3rem"
+                fontWeight={600}
+                p="1rem"
+                color={color.main.primary}
+              >
+                TOP SELLING
+              </Typography>
+            </Grid>
+            <Grid container spacing={3} mt="2rem">
+              {products
+                .filter(
+                  (product) => topSellingProduct.indexOf(product._id) >= 0
+                )
+                .map((productDetails) => {
+                  const { _id, name, description, link } = productDetails;
+                  return (
+                    // eslint-disable
+                    <Grid item xs={12} sm={12} md={12} lg={4} xl={4} key={_id}>
+                      <GridViewProductCard
+                        // eslint-disable
+                        productId={_id}
+                        img={link}
+                        imgHeight="13rem"
+                        contentHeight="6rem"
+                        title={name}
+                        description={description}
+                        sx={{
+                          borderRadius: "10px",
+                          margin: "2rem",
+                        }}
+                      />
+                    </Grid>
+                  );
+                })}
+            </Grid>
+            <Grid item xs={12} textAlign="center" p="2rem">
+              <Link href="/products">
+                <Button variant="outlined" size="large">
+                  VIEW PRODUCTS
+                </Button>
+              </Link>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
-    </Grid>
+    </>
   );
 }
 

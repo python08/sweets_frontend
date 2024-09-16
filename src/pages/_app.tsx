@@ -60,35 +60,6 @@ export default function MyApp(props: AppPropsWithLayout) {
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
-        <title>Swadgharana - Handmade Sweets</title>
-        <meta
-          name="description"
-          content="Welcome to our online sweet shop offering a delightful collection of authentic, homemade and healthy Indian sweets. Indulge in traditional and gourmet Indian sweets, including handcrafted mithai, artisanal confections, and sweet treats. Explore our wide range of exquisite desserts, perfect for festive celebrations or gifting options. Order now and experience the rich flavors of India's finest sweet delicacies."
-        />
-        <meta
-          name="keywords"
-          content="Indian sweets, homemade sweets, online sweet shop, authentic Indian desserts, traditional Indian sweets, gourmet Indian sweets, artisanal sweets, Indian mithai, handcrafted Indian desserts, sweet treats"
-        />
-        <meta property="og:url" content="https://www.swadgharana.in" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Swadgharana - Handmade Sweets" />
-        <meta
-          property="og:description"
-          content="Welcome to our online sweet shop offering a delightful collection of authentic, homemade and healthy Indian sweets. Indulge in traditional and gourmet Indian sweets, including handcrafted mithai, artisanal confections, and sweet treats. Explore our wide range of exquisite desserts, perfect for festive celebrations or gifting options. Order now and experience the rich flavors of India's finest sweet delicacies."
-        />
-        <meta
-          property="og:image"
-          content="https://sweettoothbucket.s3.ap-south-1.amazonaws.com/assest/logo.jpg"
-        />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta property="twitter:domain" content="swadgharana.in" />
-        <meta property="twitter:url" content="https://www.swadgharana.in" />
-        <meta name="twitter:title" content="Swadgharana - Handmade Sweets" />
-        <meta
-          name="twitter:description"
-          content="Welcome to our online sweet shop offering a delightful collection of authentic, homemade and healthy Indian sweets. Indulge in traditional and gourmet Indian sweets, including handcrafted mithai, artisanal confections, and sweet treats. Explore our wide range of exquisite desserts, perfect for festive celebrations or gifting options. Order now and experience the rich flavors of India's finest sweet delicacies."
-        />
         <link rel="shortcut icon" type="image/ico" href="" />
       </Head>
       <ColorModeContext.Provider value={colorMode}>
