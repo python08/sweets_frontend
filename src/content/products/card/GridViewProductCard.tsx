@@ -1,15 +1,16 @@
 import { useRef } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import { Box, Card, CardActionArea, SxProps, Theme, Zoom } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { color } from "@global/colors";
 import { fontWeight } from "@global/font";
 import { useIsVisible } from "@common/hooks/UseIsVisible";
-import Image from "next/image";
+import { productDetailsRoute } from "@common/utils/route";
 
 type ProductCardType = {
-  title: string;
+  name: string;
   description: string;
   img: any;
   imgHeight: string;
@@ -20,7 +21,7 @@ type ProductCardType = {
 
 const GridViewProductCard = (props: ProductCardType) => {
   const router = useRouter();
-  const { title, description, img, sx, productId, imgHeight, contentHeight } =
+  const { name, description, img, sx, productId, imgHeight, contentHeight } =
     props;
 
   const ref = useRef<HTMLDivElement>(null);
@@ -29,7 +30,7 @@ const GridViewProductCard = (props: ProductCardType) => {
   const lineHeight = 1;
 
   const handleNavigate = (id: string) => {
-    router.push(`explore/main/product/${id}`);
+    router.push(productDetailsRoute(name, id, 1));
   };
 
   return (
@@ -46,7 +47,7 @@ const GridViewProductCard = (props: ProductCardType) => {
           >
             <Image
               src={img}
-              alt={title}
+              alt={name}
               fill
               sizes="100vw"
               style={{ objectFit: "cover" }}
@@ -61,7 +62,7 @@ const GridViewProductCard = (props: ProductCardType) => {
             component="h1"
             lineHeight={lineHeight}
           >
-            {title}
+            {name}
           </Typography>
           <Typography
             variant="subtitle2"

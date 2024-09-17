@@ -3,9 +3,11 @@ import { useRouter } from "next/router";
 import { isEmpty } from "lodash";
 import { ProductsType } from "@common/temp/temp";
 import ProductView from "@content/products/details-view/ProductView";
+import { extractProductId } from "@common/utils";
+import { productDetailsRoute } from "@common/utils/route";
 
 import { getAllProducts, getProductDetails } from "src/apis/product/product";
-import Explore from "../..";
+import Explore from "../explore";
 
 type ProductViewProps = {
   products: ProductsType[];
@@ -14,7 +16,13 @@ type ProductViewProps = {
 
 const Product = (props: ProductViewProps) => {
   const router = useRouter();
-  const { productId } = router.query;
+
+  const { slug } = router.query;
+  let productId = null;
+  if (typeof slug === "string") {
+    productId = extractProductId(slug);
+  }
+
   const { products, productDetails } = props;
 
   // url for metadata
@@ -46,7 +54,7 @@ export const getStaticPaths = async () => {
   const paths = products.map((product: ProductsType) => ({
     params: {
       /* eslint no-underscore-dangle: 0 */
-      productId: product._id,
+      slug: productDetailsRoute(product.name, product._id, 2),
     },
   }));
   return {
@@ -57,7 +65,8 @@ export const getStaticPaths = async () => {
 
 export async function getStaticProps(context: any) {
   const { params } = context;
-  const { productId } = params;
+  const { slug } = params;
+  const productId = extractProductId(slug);
   const productDetails = await getProductDetails(productId);
   const products = await getAllProducts();
   return {

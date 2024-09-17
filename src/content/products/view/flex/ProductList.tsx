@@ -28,7 +28,7 @@ const FlexViewProductList = ({
           key={product._id}
         >
           <FlexViewProductCard
-            alt={product.name}
+            name={product.name}
             description={product.name}
             img={product.link}
             cardMediaHeight={productCardHeight}

@@ -20,10 +20,10 @@ const GridViewProductList = ({ products }: ProductListType) => (
         {products.map((product: ProductsType) => (
           <Grid item xs={12} sm={6} md={6} lg={4} xl={4} key={product.name}>
             <GridViewProductCard
-              title={product.name}
+              name={product.name}
               description={product.description}
               img={product.link}
-              imgHeight="10rem"
+              imgHeight="13rem"
               contentHeight="6rem"
               /* eslint-disable */
               productId={product._id}

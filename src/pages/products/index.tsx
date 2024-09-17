@@ -1,11 +1,11 @@
 import { ReactElement } from "react";
 import { ProductsType } from "@common/temp/temp";
 import FallBack from "@components/ErrorFallBack/FallBack";
+import Body from "@content/main-page/body/Body";
 
 import { getUpdates } from "src/apis/updates/updates";
 import { getAllProducts } from "src/apis/product/product";
 import Explore from "../explore";
-import Main from "../explore/main/index";
 
 type IndexProps = {
   products: ProductsType[];
@@ -19,7 +19,7 @@ export default function Index(props: IndexProps) {
   if (!products || !Array.isArray(products)) {
     return <FallBack />;
   }
-  return <Main products={products} updates={updates} />;
+  return <Body products={products} updates={updates} />;
 }
 
 Index.getLayout = function getLayout(page: ReactElement) {

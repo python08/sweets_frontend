@@ -127,7 +127,7 @@ export default function Page(props: LandingPageProps) {
                         img={link}
                         imgHeight="13rem"
                         contentHeight="6rem"
-                        title={name}
+                        name={name}
                         description={description}
                         sx={{
                           borderRadius: "10px",

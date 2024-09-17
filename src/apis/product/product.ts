@@ -5,7 +5,7 @@ export async function getAllProducts() {
   return products;
 }
 
-export async function getProductDetails(id: number) {
+export async function getProductDetails(id: string) {
   const products = await loadData(`product/${id}`);
   return products;
 }

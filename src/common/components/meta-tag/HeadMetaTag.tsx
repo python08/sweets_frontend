@@ -17,10 +17,7 @@ const HeadMetaTag = ({ name, description, image, url }: HeadMetaTagProps) => (
     />
 
     <meta property="og:title" content={name} />
-    <meta
-      property="og:description"
-      content={`Buy ${name} from our online sweet shop. ${description}`}
-    />
+    <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
     <meta property="og:url" content={url} />
     <meta property="og:type" content="product" />

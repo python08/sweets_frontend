@@ -1,13 +1,14 @@
 import { useRef } from "react";
 import { useRouter } from "next/router";
+import Image from "next/image";
 import { Box, Card, CardActionArea, Zoom } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { useIsVisible } from "@common/hooks/UseIsVisible";
-import Image from "next/image";
+import { productDetailsRoute } from "@common/utils/route";
 
 type ProductCardType = {
-  alt: string;
+  name: string;
   description: string;
   img: any;
   cardMediaHeight: string;
@@ -17,7 +18,7 @@ type ProductCardType = {
 
 const FlexViewProductCard = (props: ProductCardType) => {
   const router = useRouter();
-  const { alt, description, img, cardMediaHeight, productId, section } = props;
+  const { name, description, img, cardMediaHeight, productId, section } = props;
 
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useIsVisible(ref);
@@ -31,9 +32,9 @@ const FlexViewProductCard = (props: ProductCardType) => {
 
   const handleNavigate = (id: string) => {
     if (Section.main === section) {
-      router.push(`explore/main/product/${id}`);
+      router.push(productDetailsRoute(name, id, 1));
     } else if (Section.suggested === section) {
-      router.replace(`${id}`);
+      router.replace(productDetailsRoute(name, id, 2));
     }
   };
 
@@ -52,7 +53,7 @@ const FlexViewProductCard = (props: ProductCardType) => {
           >
             <Image
               src={img}
-              alt={alt}
+              alt={name}
               fill
               sizes="100vw"
               style={{ objectFit: "cover" }}
