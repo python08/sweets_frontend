@@ -3,7 +3,6 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { ProductsType, Categories } from "@common/temp/temp";
 import HeadMetaTag from "@components/meta-tag/HeadMetaTag";
-import { removeLastHyphenAndText } from "@common/utils";
 
 import ProductDetails from "../details/ProductDetails";
 import { getProductByCategory } from "../utils/utils";
@@ -30,7 +29,7 @@ const ProductView = (props: ProductViewProps) => {
         name={title}
         description={`Buy ${title} from Swad Gharana online sweet shop.`}
         image={link}
-        url={removeLastHyphenAndText(url)}
+        url={url}
       />
       <Grid container p="1rem">
         <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
