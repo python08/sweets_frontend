@@ -9,11 +9,11 @@ type HeadMetaTagProps = {
 
 const HeadMetaTag = ({ name, description, image, url }: HeadMetaTagProps) => (
   <Head>
-    <title>{name} - Handmade Sweets Shop</title>
+    <title>{name}</title>
     <meta name="description" content={description} />
     <meta
       name="keywords"
-      content={`Indian sweets, homemade sweets, online sweet shop, authentic Indian desserts, traditional Indian sweets, Indian mithai, handcrafted Indian desserts, sweet treats, ${name}`}
+      content={`${name} Indian sweets, homemade sweets, online sweet shop, authentic Indian desserts, traditional Indian sweets, Indian mithai, handcrafted Indian desserts, sweet treats`}
     />
 
     <meta property="og:title" content={name} />
@@ -26,7 +26,7 @@ const HeadMetaTag = ({ name, description, image, url }: HeadMetaTagProps) => (
 
     <meta name="twitter:card" content={image} />
     <meta property="twitter:url" content={url} />
-    <meta name="twitter:title" content={`${name} - Handmade Sweets Shop`} />
+    <meta name="twitter:title" content={`${name} - Sweets Shop`} />
     <meta name="twitter:description" content={description} />
   </Head>
 );

@@ -26,7 +26,7 @@ const ProductView = (props: ProductViewProps) => {
   return (
     <>
       <HeadMetaTag
-        name={title}
+        name={`${title} - Swad Gharana`}
         description={`Buy ${title} from Swad Gharana online sweet shop.`}
         image={link}
         url={url}

@@ -56,7 +56,7 @@ export default function Page(props: LandingPageProps) {
   );
   // metadata
   const metaData = {
-    title: "Swadgharana",
+    title: "Homemade Ukadiche modak Besan ladoo - Swad Gharana",
     description:
       "Welcome to our online sweet shop offering a delightful collection of authentic, homemade and healthy Indian sweets. Indulge in traditional and gourmet Indian sweets, including handcrafted mithai, artisanal confections, and sweet treats. Explore our wide range of exquisite desserts, perfect for festive celebrations or gifting options. Order now and experience the rich flavors of India's finest sweet delicacies.",
     image:
