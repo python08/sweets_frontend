@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 
 import { heroDescriptionStyle, style } from "./style";
-import Karanji from "../../../public/assests/Karanji.jpg";
+import Karanji from "../../../public/assests/Karanji.jpeg";
 
 type HeroDescriptionType = {
   lgDown: boolean;

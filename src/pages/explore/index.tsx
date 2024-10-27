@@ -1,7 +1,7 @@
-import { useState, createContext } from "react";
+import { createContext } from "react";
 import { Box } from "@mui/material";
 import Footer from "@content/main-page/footer/Footer";
-import Header, { Anchor } from "@content/main-page/header/Header";
+import Header from "@content/main-page/header/Header";
 import HeadMetaTag from "@components/meta-tag/HeadMetaTag";
 
 import { style } from "../../content/main-page/body/style";
@@ -15,27 +15,6 @@ type ExplorePropType = {
 };
 
 const Explore = ({ children }: ExplorePropType) => {
-  const [state, setState] = useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
-
-  const toggleDrawer =
-    (anchor: Anchor, open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event &&
-        event.type === "keydown" &&
-        ((event as React.KeyboardEvent).key === "Tab" ||
-          (event as React.KeyboardEvent).key === "Shift")
-      ) {
-        return;
-      }
-      setState({ ...state, [anchor]: open });
-    };
-
   // #find -> for SSR make this value false for first render
   // if (!matches) return <WorkInProgress />; TNCCC24000303982
 
@@ -58,7 +37,7 @@ const Explore = ({ children }: ExplorePropType) => {
         url={metaData.url}
       />
       <Box sx={style.background}>
-        <Header state={state} toggleDrawer={toggleDrawer} />
+        <Header />
         <main style={style.mainContent}>{children}</main>
         <Footer />
       </Box>

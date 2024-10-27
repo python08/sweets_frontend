@@ -8,7 +8,7 @@ type WhatsappShareProps = {
 
 export const WhatsappShare = (props: WhatsappShareProps) => {
   const { productTitle, quantity } = props;
-  const number = "919702535617";
+  const number = "919967073006";
   const text = `More details for ${quantity} quantity of ${productTitle}`;
   const link = `https://wa.me/${number}?text=${encodeURI(text)}`;
 
