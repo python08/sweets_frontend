@@ -1,14 +1,3 @@
-const sliderContainer = {
-  position: "relative",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  height: "100%",
-  width: "100%",
-  overflow: "hidden",
-  border: "none",
-};
-
 const leftArrow = {
   position: "absolute",
   top: "50%",
@@ -24,35 +13,35 @@ const rightArrow = {
   cursor: "pointer",
 };
 
-const productCard = {
-  minWidth: "100%",
-  height: "100%",
-  borderRadius: "10px",
-  boxShadow: "none",
-};
+// const productCard = {
+//   minWidth: "100%",
+//   height: "100%",
+//   borderRadius: "10px",
+//   boxShadow: "none",
+// };
 
 const slide = {
   opacity: 0,
   transitionDuration: "all .75s ease",
 };
 
-const slideActive = [
-  slide,
-  {
-    opacity: 1,
-    transitionDuration: "3s",
-    transform: "scale(0.8)",
-  },
-];
+// const slideActive = [
+//   slide,
+//   {
+//     opacity: 1,
+//     transitionDuration: "3s",
+//     transform: "scale(0.8)",
+//   },
+// ];
 
-export const UpdatesCarouselStyle = {
-  SliderContainer: sliderContainer,
-  LeftArrow: leftArrow,
-  RightArrow: rightArrow,
-  ProductCard: productCard,
-  Slide: slide,
-  SlideActive: slideActive,
-};
+// export const UpdatesCarouselStyle = {
+//   SliderContainer: sliderContainer,
+//   LeftArrow: leftArrow,
+//   RightArrow: rightArrow,
+//   ProductCard: productCard,
+//   Slide: slide,
+//   SlideActive: slideActive,
+// };
 
 const mainSlide = {
   transitionDuration: "all .75s ease",
@@ -65,14 +54,21 @@ const mainSlideActive = [
   },
 ];
 
-const mainContainer = {
-  ...sliderContainer,
+export const SliderContainer = (height: string) => ({
+  position: "relative",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  height,
+  width: "100%",
+  overflow: "hidden",
+  border: "none",
   marginTop: "1rem",
   maxHeight: "25rem",
-};
+});
 
 export const MainCarouselStyle = {
-  SliderContainer: mainContainer,
+  SliderContainer,
   LeftArrow: leftArrow,
   RightArrow: rightArrow,
   Slide: mainSlide,

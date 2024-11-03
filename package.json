@@ -27,8 +27,6 @@
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
     "eslint-config-airbnb": "^19.0.4",
-    "http-simple-proxy": "^1.0.5",
-    "https-proxy-agent": "^7.0.0",
     "install-peerdeps": "^3.0.3",
     "lodash": "^4.17.21",
     "next": "^14.1.0",

@@ -1,6 +1,5 @@
 import GridViewProductList from "@content/products/view/grid/ProductList";
 import FlexViewProductList from "@content/products/view/flex/ProductList";
-import Updates from "@content/updates/Updates";
 import { Box, Grid } from "@mui/material";
 import { Categories } from "@common/temp/temp";
 import { Headline } from "@components/Headline/Headline";
@@ -12,7 +11,7 @@ import { style } from "./style";
 import { BodyProps } from "./model";
 
 const Body = (props: BodyProps) => {
-  const { products, updates } = props;
+  const { products } = props;
   if (!products) return null;
 
   const ladoos = getProductByCategory(products, Categories.Ladoo);
@@ -26,11 +25,8 @@ const Body = (props: BodyProps) => {
       </Grid>
       <Box sx={style.main}>
         <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Updates updates={updates} />
-          </Grid>
           <Grid item xs={12} pb="3rem">
-            <Box sx={{ textAlign: "center" }} pb="1rem">
+            <Box sx={{ textAlign: "center" }} pb="1rem" pt="3rem">
               <Headline
                 headLine="Indulge in the Irresistible Charm of Traditional Indian Ladoo
           Delights!"
