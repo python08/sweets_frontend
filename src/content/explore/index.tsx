@@ -1,10 +1,12 @@
+"use client";
+
 import { createContext } from "react";
 import { Box } from "@mui/material";
 import Footer from "@content/main-page/footer/Footer";
 import Header from "@content/main-page/header/Header";
 import HeadMetaTag from "@components/meta-tag/HeadMetaTag";
 
-import { style } from "../../content/main-page/body/style";
+import { style } from "../main-page/body/style";
 
 export const ColorModeContext = createContext({
   toggleColorMode: () => {},

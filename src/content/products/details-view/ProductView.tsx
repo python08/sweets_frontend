@@ -32,7 +32,7 @@ const ProductView = (props: ProductViewProps) => {
         url={url}
       />
       <Grid container p="1rem">
-        <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+        <Grid size={{ xs: 12, sm: 12, md: 12, lg: 6, xl: 6 }}>
           <Box
             p={lgDown ? "" : "1rem"}
             sx={{ boxSizing: "border-box", height: lgDown ? "30rem" : "40rem" }}
@@ -45,7 +45,7 @@ const ProductView = (props: ProductViewProps) => {
             />
           </Box>
         </Grid>
-        <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+        <Grid size={{ xs: 12, sm: 12, md: 12, lg: 6, xl: 6 }}>
           <ProductDetails
             title={title}
             brief={brief}

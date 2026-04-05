@@ -11,7 +11,7 @@ import { style } from "./style";
 const Footer = () => (
   <Box sx={style.container}>
     <Grid container>
-      <Grid item xs={12} sm={12} md={4} lg={4}>
+      <Grid size={{ xs: 12, sm: 12, md: 4, lg: 4 }}>
         <Box sx={style.aboutus}>
           <Box>
             <Typography
@@ -37,12 +37,12 @@ const Footer = () => (
       </Grid>
       {/*
       FP
-      <Grid item xs={12} sm={12} md={4} lg={4}>
+      <Grid size={{ xs: 12, sm: 12, md: 4, lg: 4 }}>
         <Box>
           <Typography component="p">Home</Typography>
         </Box>
       </Grid>
-      <Grid item xs={12} sm={12} md={4} lg={4}>
+      <Grid size={{ xs: 12, sm: 12, md: 4, lg: 4 }}>
         <Box>
           <Typography component="p">About us</Typography>
         </Box>

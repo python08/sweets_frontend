@@ -77,12 +77,12 @@ const ProductDetails = (props: ProductDetailsProps) => {
       </Box>
       <Box pt="1rem">
         <Grid container>
-          <Grid item xs={6}>
+          <Grid size={{ xs: 6 }}>
             <Box height="4.4rem">
               <ProductQuantity quantity={quantity} setQuantity={setQuantity} />
             </Box>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={{ xs: 6 }}>
             <Box height="4.4rem" mt="2.1rem">
               <WhatsappShare quantity={quantity} productTitle={title} />
             </Box>

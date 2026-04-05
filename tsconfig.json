@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es2020",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -9,19 +13,30 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "jsxImportSource": "@emotion/react",
     "incremental": true,
     "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
     "paths": {
-      "@components/*": ["src/common/components/*"],
-      "@styles/*": ["src/content/landing-page/style/*"],
-      "@content/*": ["src/content/*"],
-      "@common/*": ["src/common/*"],
-      "@global/*": ["src/styles/*"]
+      "@components/*": [
+        "src/common/components/*"
+      ],
+      "@styles/*": [
+        "src/content/landing-page/style/*"
+      ],
+      "@content/*": [
+        "src/content/*"
+      ],
+      "@common/*": [
+        "src/common/*"
+      ],
+      "@global/*": [
+        "src/styles/*"
+      ]
     },
     "plugins": [
       {
@@ -29,6 +44,14 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

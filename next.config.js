@@ -12,6 +12,10 @@ const nextConfig = {
       },
     ],
   },
+  serverExternalPackages: [], // Ensure relevant packages aren't bundled incorrectly
+  experimental: {
+    serverSourceMaps: true, // Enable for better server-side traces
+  },
 };
 
 module.exports = nextConfig;

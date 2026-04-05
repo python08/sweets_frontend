@@ -19,13 +19,13 @@ const Body = (props: BodyProps) => {
   return (
     <>
       <Grid container>
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <MainCarousel />
         </Grid>
       </Grid>
       <Box sx={style.main}>
         <Grid container spacing={2}>
-          <Grid item xs={12} pb="3rem">
+          <Grid size={{ xs: 12 }} pb="3rem">
             <Box sx={{ textAlign: "center" }} pb="1rem" pt="3rem">
               <Headline
                 headLine="Indulge in the Irresistible Charm of Traditional Indian Ladoo
@@ -40,12 +40,12 @@ const Body = (props: BodyProps) => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} pb="2rem">
+          <Grid size={{ xs: 12 }} pb="2rem">
             <GridViewProductList products={products} />
           </Grid>
           {/* 
           upcoming changes
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <ProductCategories
               festivals={festivals}
               handleFilter={handleFilter}
