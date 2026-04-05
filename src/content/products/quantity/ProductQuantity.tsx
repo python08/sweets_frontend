@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Fab, Typography } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveRoundedIcon from "@mui/icons-material/RemoveRounded";

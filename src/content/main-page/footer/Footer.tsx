@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Grid, Typography } from "@mui/material";
 import GoogleIcon from "@mui/icons-material/Google";
 import InstagramIcon from "@mui/icons-material/Instagram";

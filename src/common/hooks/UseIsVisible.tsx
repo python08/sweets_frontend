@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 
 export const useIsVisible = (ref: any) => {
@@ -5,7 +7,7 @@ export const useIsVisible = (ref: any) => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) =>
-      setIsIntersecting(entry.isIntersecting)
+      setIsIntersecting(entry.isIntersecting),
     );
 
     observer.observe(ref.current);

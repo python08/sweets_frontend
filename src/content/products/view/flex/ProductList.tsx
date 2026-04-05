@@ -1,3 +1,5 @@
+"use client";
+
 import { ProductsType } from "@common/temp/temp";
 import FlexViewProductCard from "@content/products/card/FlexViewProductCard";
 import { displayFlexCenter } from "@global/global.style";

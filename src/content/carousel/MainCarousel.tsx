@@ -1,3 +1,5 @@
+"use client";
+
 import Image, { StaticImageData } from "next/image";
 import { useCarousel } from "@common/hooks/UseCarousel";
 import { Box, useMediaQuery, useTheme } from "@mui/material";

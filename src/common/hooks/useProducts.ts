@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { getAllProducts } from "../../apis/product/product";
 import { ProductsType } from "../temp/temp";

@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 
 import Avatar from "@mui/material/Avatar";
 import Chip from "@mui/material/Chip";

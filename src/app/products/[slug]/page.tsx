@@ -4,6 +4,8 @@ import { extractProductId } from "@common/utils";
 import { productDetailsRoute } from "@common/utils/route";
 import { getAllProducts, getProductDetails } from "src/apis/product/product";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
+import { constructMetadata } from "src/utils/constructMetadata";
 
 // Replaces `revalidate: 60` from getStaticProps
 export const revalidate = 60;
@@ -13,6 +15,24 @@ type ProductPageProps = {
     slug: string;
   }>;
 };
+
+// set metadata
+export async function generateMetadata({
+  params,
+}: ProductPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const productId = extractProductId(slug);
+
+  // Fetch product data on the server
+  const productDetails = await getProductDetails(productId as string);
+
+  return constructMetadata({
+    name: productDetails.name,
+    description: productDetails.description,
+    image: productDetails.link,
+    url: `${process.env.NEXT_PUBLIC_DOMAIN}/products/${slug}`,
+  });
+}
 
 // 1. getStaticPaths becomes generateStaticParams
 export async function generateStaticParams() {
@@ -53,15 +73,5 @@ export default async function ProductPage({ params }: ProductPageProps) {
     return notFound();
   }
 
-  // Server components do not have access to router.asPath. 
-  // Reconstruct the URL using domain and params.
-  const url = `${process.env.NEXT_PUBLIC_DOMAIN}/products/${slug}`;
-
-  return (
-    <ProductView
-      products={productList}
-      productDetails={details}
-      url={url}
-    />
-  );
+  return <ProductView products={productList} productDetails={details} />;
 }

@@ -1,10 +1,12 @@
+"use client";
+
 import { CardActionArea, SxProps, Theme } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { color } from "@global/colors";
-import { EmotionJSX } from "@emotion/react/types/jsx-namespace";
 import { CardStyle } from "@components/styles/style";
+import { EmotionJSX } from "node_modules/@emotion/react/dist/declarations/src/jsx-namespace";
 
 import { MuiCard } from "./index";
 

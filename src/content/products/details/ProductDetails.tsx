@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { WhatsappShare } from "@components/WhatsappShare/WhatsappShare";
 import { color } from "@global/colors";
