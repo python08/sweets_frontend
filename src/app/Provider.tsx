@@ -19,7 +19,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
         setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
       },
     }),
-    []
+    [],
   );
 
   const theme = React.useMemo(() => {

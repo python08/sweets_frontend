@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Box, Card, CardActionArea, Zoom } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
@@ -51,13 +51,22 @@ const FlexViewProductCard = (props: ProductCardType) => {
       <CardActionArea onClick={() => handleNavigate(productId)}>
         <Zoom in={isVisible}>
           <Box
-            sx={{ height: `${cardMediaHeight}`, width: "10rem", opacity: 1 }}
+            sx={{
+              height: `${cardMediaHeight}`,
+              width: "10rem",
+              opacity: 1,
+              position: "relative",
+            }}
           >
             <Image
               src={img}
               alt={name}
               fill
-              sizes="100vw"
+              // Fixed. Since the image container is fixed at 10rem
+              //   wide, sizes is now "10rem" so the browser fetches an appropriately
+              //   small image.
+              sizes="10rem"
+              loading="eager"
               style={{ objectFit: "cover" }}
             />
           </Box>

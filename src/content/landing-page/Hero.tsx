@@ -17,9 +17,9 @@ const Hero = ({ lgDown }: HeroType) => (
         <Image
           src={logo.src}
           alt="swad_gharana"
-          layout="responsive"
           height={260}
           width={470}
+          style={{ width: "100%", height: "auto" }}
         />
       </Box>
       <Box mt="1rem" ml="1rem">

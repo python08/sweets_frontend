@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, CardMedia, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";

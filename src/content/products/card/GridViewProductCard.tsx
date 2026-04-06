@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Box, Card, CardActionArea, SxProps, Theme, Zoom } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
@@ -47,11 +47,14 @@ const GridViewProductCard = (props: ProductCardType) => {
               overflow: "hidden",
             }}
           >
+            {/* Fixed. Since the image container is fixed at 10rem wide, sizes is
+            now "10rem" so the browser fetches an appropriately small image. */}
             <Image
               src={img}
               alt={name}
               fill
-              sizes="100vw"
+              loading="eager"
+              sizes="(max-width: 600px) 50vw, (max-width: 900px) 33vw, 25vw"
               style={{ objectFit: "cover" }}
             />
           </Box>

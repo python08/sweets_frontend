@@ -60,7 +60,10 @@ const ProductDetails = (props: ProductDetailsProps) => {
         <Box>
           <List>
             {brief.split("*").map((data: string) => (
-              <ListItem sx={{ padding: "0.3rem 0.3rem 0.3rem 0rem" }}>
+              <ListItem
+                sx={{ padding: "0.3rem 0.3rem 0.3rem 0rem" }}
+                key={data}
+              >
                 <FiberManualRecord
                   sx={{ fontSize: "small", marginRight: "5px" }}
                 />

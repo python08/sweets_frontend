@@ -1,11 +1,7 @@
 {
   "compilerOptions": {
     "target": "es2020",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -17,26 +13,15 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "react-jsx",
-    "jsxImportSource": "@emotion/react",
     "incremental": true,
     "baseUrl": ".",
     "ignoreDeprecations": "6.0",
     "paths": {
-      "@components/*": [
-        "src/common/components/*"
-      ],
-      "@styles/*": [
-        "src/content/landing-page/style/*"
-      ],
-      "@content/*": [
-        "src/content/*"
-      ],
-      "@common/*": [
-        "src/common/*"
-      ],
-      "@global/*": [
-        "src/styles/*"
-      ]
+      "@components/*": ["src/common/components/*"],
+      "@styles/*": ["src/content/landing-page/style/*"],
+      "@content/*": ["src/content/*"],
+      "@common/*": ["src/common/*"],
+      "@global/*": ["src/styles/*"]
     },
     "plugins": [
       {
@@ -51,7 +36,5 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }

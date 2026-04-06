@@ -49,14 +49,13 @@ const MainCarousel = () => {
       </Box>
       {/* eslint-disable */}
       {images.map((image, index: number) => (
-        <Box>
+        <Box key={index}>
           <Box
             sx={
               index === current
                 ? MainCarouselStyle.SlideActive
                 : MainCarouselStyle.Slide
             }
-            key={index}
           >
             {index === current && (
               <Image
