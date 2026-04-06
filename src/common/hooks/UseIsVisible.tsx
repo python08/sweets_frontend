@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export const useIsVisible = (ref: any) => {
+export const useIsVisible = (ref: React.RefObject<HTMLElement | null>) => {
   const [isItersecting, setIsIntersecting] = useState(false);
 
   useEffect(() => {
@@ -10,7 +10,9 @@ export const useIsVisible = (ref: any) => {
       setIsIntersecting(entry.isIntersecting),
     );
 
-    observer.observe(ref.current);
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
 
     return () => {
       observer.disconnect();

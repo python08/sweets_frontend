@@ -9,7 +9,7 @@ import { Box, Grid, List, ListItem, Typography } from "@mui/material";
 import FlexViewProductList from "@content/products/view/flex/ProductList";
 import CurrencyRupeeRoundedIcon from "@mui/icons-material/CurrencyRupeeRounded";
 import { displayFlexAlignCenter } from "@global/global.style";
-import { ProductsType } from "@common/temp/temp";
+import type { ProductsType } from "@common/temp/temp";
 import { isEmpty } from "lodash";
 import ProductQuantity from "../quantity/ProductQuantity";
 import { Section } from "../constant/main";

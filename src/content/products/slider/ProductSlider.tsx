@@ -10,7 +10,7 @@ import ProductChips from "./ProductChips";
 const ProductSlider = () => {
   // const [value, setValue] = useState(0);
   // const [products, setProducts] = useState<ProductsType[]>();
-  const products: any[] = [];
+  const products: { name: string }[] = [];
 
   // const handleChange = (event: SyntheticEvent, newValue: number) => {
   //   setValue(newValue);
@@ -26,7 +26,7 @@ const ProductSlider = () => {
         aria-label="scrollable prevent tabs example"
       >
         {products.map((product) => (
-          <ProductChips label={product.name} />
+          <ProductChips key={product.name} label={product.name} />
         ))}
       </Tabs>
     </Box>

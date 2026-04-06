@@ -3,7 +3,8 @@
 import { Box, CardMedia, Grid } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { ProductsType, Categories } from "@common/temp/temp";
+import type { ProductsType } from "@common/temp/temp";
+import { Categories } from "@common/temp/temp";
 
 import ProductDetails from "../details/ProductDetails";
 import { getProductByCategory } from "../utils/utils";
@@ -17,7 +18,6 @@ const ProductView = (props: ProductViewProps) => {
   const { products, productDetails } = props;
   const { title, brief, link, price } = productDetails;
   const ladoos = getProductByCategory(products, Categories.Ladoo).filter(
-    /* eslint-disable */
     (product) => product._id !== productDetails._id,
   );
   const theme = useTheme();

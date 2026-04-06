@@ -2,7 +2,7 @@ import wip from "@common/temp/images/wip.svg";
 
 export const LoaderStyle = {
   color: "#fff",
-  zIndex: (theme: any) => theme.zIndex.drawer + 1,
+  zIndex: (theme: { zIndex: { drawer: number } }) => theme.zIndex.drawer + 1,
   position: "relative",
 };
 

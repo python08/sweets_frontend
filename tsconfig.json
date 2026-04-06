@@ -14,8 +14,8 @@
     "isolatedModules": true,
     "jsx": "react-jsx",
     "incremental": true,
-    "baseUrl": ".",
     "ignoreDeprecations": "6.0",
+    "baseUrl": ".",
     "paths": {
       "@components/*": ["src/common/components/*"],
       "@styles/*": ["src/content/landing-page/style/*"],

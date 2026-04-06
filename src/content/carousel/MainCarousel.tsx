@@ -1,6 +1,7 @@
 "use client";
 
-import Image, { StaticImageData } from "next/image";
+import type { StaticImageData } from "next/image";
+import Image from "next/image";
 import { useCarousel } from "@common/hooks/UseCarousel";
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
@@ -47,7 +48,7 @@ const MainCarousel = () => {
           sx={{ color: "#E3E5E7" }}
         />
       </Box>
-      {/* eslint-disable */}
+      {}
       {images.map((image, index: number) => (
         <Box key={index}>
           <Box

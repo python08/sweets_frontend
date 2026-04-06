@@ -3,7 +3,8 @@
 import { useRef } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import { Box, Card, CardActionArea, SxProps, Theme, Zoom } from "@mui/material";
+import type { SxProps, Theme } from "@mui/material";
+import { Box, Card, CardActionArea, Zoom } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { color } from "@global/colors";
@@ -14,7 +15,7 @@ import { productDetailsRoute } from "@common/utils/route";
 type ProductCardType = {
   name: string;
   description: string;
-  img: any;
+  img: string;
   imgHeight: string;
   contentHeight: string;
   productId: string;
