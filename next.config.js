@@ -10,11 +10,7 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
-  },
-  serverExternalPackages: [], // Ensure relevant packages aren't bundled incorrectly
-  experimental: {
-    serverSourceMaps: true, // Enable for better server-side traces
-  },
+  }, // Ensure relevant packages aren't bundled incorrectly
 };
 
 module.exports = nextConfig;

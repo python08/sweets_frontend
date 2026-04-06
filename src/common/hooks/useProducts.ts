@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getAllProducts } from "../../apis/product/product";
-import { ProductsType } from "../temp/temp";
+import type { ProductsType } from "../temp/temp";
 
 export const useProducts = () => {
   const [products, setProducts] = useState<ProductsType[]>([]);
@@ -23,7 +23,7 @@ export const useProducts = () => {
         } else {
           setProducts(data);
         }
-      } catch (error) {
+      } catch {
         if (mounted) {
           setHasError(true);
           setProducts([]);

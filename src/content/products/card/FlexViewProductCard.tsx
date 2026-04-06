@@ -12,7 +12,7 @@ import { productDetailsRoute } from "@common/utils/route";
 type ProductCardType = {
   name: string;
   description: string;
-  img: any;
+  img: string;
   cardMediaHeight: string;
   section: string;
   productId: string;

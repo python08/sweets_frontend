@@ -1,17 +1,18 @@
-import { Categories, CategoriesKeys, ProductsType } from "@common/temp/temp";
+import type { CategoriesKeys, ProductsType } from "@common/temp/temp";
+import { Categories } from "@common/temp/temp";
 
 export const getProductByCategory = (
   products: ProductsType[],
-  category: CategoriesKeys
+  category: CategoriesKeys,
 ) => {
   switch (category) {
     case Categories.Ladoo:
       return products.filter(
-        (product) => product.category.name === Categories.Ladoo
+        (product) => product.category.name === Categories.Ladoo,
       );
     case Categories.Others:
       return products.filter(
-        (product) => product.category.name === Categories.Others
+        (product) => product.category.name === Categories.Others,
       );
     default:
       return products;

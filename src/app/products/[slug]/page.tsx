@@ -1,10 +1,10 @@
-import { ProductsType } from "@common/temp/temp";
+import type { ProductsType } from "@common/temp/temp";
 import ProductView from "@content/products/details-view/ProductView";
 import { extractProductId } from "@common/utils";
 import { productDetailsRoute } from "@common/utils/route";
 import { getAllProducts, getProductDetails } from "src/apis/product/product";
 import { notFound } from "next/navigation";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { constructMetadata } from "src/utils/constructMetadata";
 
 // Replaces `revalidate: 60` from getStaticProps
@@ -43,7 +43,6 @@ export async function generateStaticParams() {
   }
 
   return products.map((product: ProductsType) => ({
-    // eslint-disable-next-line no-underscore-dangle
     slug: productDetailsRoute(product.name, product._id, 2),
   }));
 }

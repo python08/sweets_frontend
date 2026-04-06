@@ -1,4 +1,4 @@
-import { Category, Festival } from "@content/products/constant/type";
+import type { Category, Festival } from "@content/products/constant/type";
 
 export type ProductsType = {
   _id: string;

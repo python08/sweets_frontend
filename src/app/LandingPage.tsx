@@ -90,10 +90,9 @@ const LandingPage = () => {
           </Grid>
           <Grid container spacing={3} mt="2rem">
             {safeProducts
-              // eslint-disable-next-line no-underscore-dangle
+
               .filter((product) => topSellingProduct.indexOf(product._id) >= 0)
               .map((productDetails) => {
-                // eslint-disable-next-line @typescript-eslint/naming-convention
                 const { _id, name, description, link } = productDetails;
                 return (
                   <Grid

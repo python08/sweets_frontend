@@ -1,5 +1,5 @@
 import Body from "@content/main-page/body/Body";
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { constructMetadata } from "src/utils/constructMetadata";
 
 // Export standard Next.js App Router Metadata here

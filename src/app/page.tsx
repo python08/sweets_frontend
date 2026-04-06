@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { constructMetadata } from "src/utils/constructMetadata";
 
 import LandingPage from "./LandingPage";

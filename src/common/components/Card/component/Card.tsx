@@ -1,19 +1,20 @@
 "use client";
 
-import { CardActionArea, SxProps, Theme } from "@mui/material";
+import type { SxProps, Theme } from "@mui/material";
+import { CardActionArea } from "@mui/material";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { color } from "@global/colors";
 import { CardStyle } from "@components/styles/style";
-import { EmotionJSX } from "node_modules/@emotion/react/dist/declarations/src/jsx-namespace";
+import type { EmotionJSX } from "node_modules/@emotion/react/dist/declarations/src/jsx-namespace";
 
 import { MuiCard } from "./index";
 
 type ProductCardType = {
   title?: string;
   description?: string;
-  img?: any;
+  img?: string | { src: string };
   cardMediaHeight?: string;
   sx?: SxProps<Theme>;
   productCard?: boolean;
@@ -31,10 +32,9 @@ const Card = (props: ProductCardType) => {
     cardContent,
   } = props;
 
-  let cardImage = img;
+  const cardImage = typeof img === "string" ? img : img?.src;
   let lineHeight = 1.6;
   if (productCard) {
-    cardImage = img.src;
     lineHeight = 1;
   }
 

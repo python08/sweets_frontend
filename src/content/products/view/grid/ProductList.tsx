@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Grid } from "@mui/material";
-import { ProductsType } from "@common/temp/temp";
+import type { ProductsType } from "@common/temp/temp";
 import { displayFlexCenter } from "@global/global.style";
 
 import GridViewProductCard from "../../card/GridViewProductCard";
@@ -30,7 +30,6 @@ const GridViewProductList = ({ products }: ProductListType) => (
               img={product.link}
               imgHeight="13rem"
               contentHeight="6rem"
-              /* eslint-disable */
               productId={product._id}
               sx={productList}
             />

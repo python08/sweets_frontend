@@ -51,7 +51,10 @@ const houseImage = (lgDown: boolean) => ({
   marginBottom: "1rem",
 });
 
-const hero1 = (color: any, lgDown: boolean) => ({
+const hero1 = (
+  color: { main: { primary: string; pureWhite: string } },
+  lgDown: boolean,
+) => ({
   textShadow: lgDown
     ? ""
     : `-2px -2px 0 ${color.main.primary}, 2px -2px 0 ${color.main.primary},-2px 2px 0 ${color.main.primary},2px 2px 0 ${color.main.primary}`,

@@ -7,7 +7,10 @@ const Item = {
   textAlign: "center",
 };
 
-export const ImageButton = styled(ButtonBase)(({ shadow, active }: any) => ({
+export const ImageButton = styled(ButtonBase)<{
+  shadow?: string;
+  active?: boolean;
+}>(({ shadow, active }) => ({
   height: "4.5rem",
   width: "4.5rem",
   boxSizing: "border-box",
@@ -83,7 +86,7 @@ const FestivalContainer = {
 
 const FestivalBox = { height: "5rem", width: "5rem", marginRight: "0.7rem" };
 
-export default {
+const festivalStyles = {
   Container,
   Item,
   ImageContainer,
@@ -93,3 +96,5 @@ export default {
   FestivalContainer,
   FestivalBox,
 };
+
+export default festivalStyles;

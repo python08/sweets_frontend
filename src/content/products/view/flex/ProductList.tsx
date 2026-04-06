@@ -1,6 +1,6 @@
 "use client";
 
-import { ProductsType } from "@common/temp/temp";
+import type { ProductsType } from "@common/temp/temp";
 import FlexViewProductCard from "@content/products/card/FlexViewProductCard";
 import { displayFlexCenter } from "@global/global.style";
 import { Box } from "@mui/material";
@@ -24,7 +24,6 @@ const FlexViewProductList = ({
       ]}
     >
       {products.map((product: ProductsType) => (
-        /* eslint-disable */
         <Box
           sx={{ boxSizing: "border-box", marginRight: "2rem" }}
           key={product._id}
@@ -34,7 +33,6 @@ const FlexViewProductList = ({
             description={product.name}
             img={product.link}
             cardMediaHeight={productCardHeight}
-            /* eslint-disable */
             productId={product._id}
             section={section}
           />

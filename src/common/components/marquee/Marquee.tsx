@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import type { ReactNode } from "react";
 import { color } from "@global/colors";
 
 import { style } from "./style";
@@ -18,7 +18,7 @@ const Marquee = ({ children, speed }: MarqueeProps) => {
       <div className="marquee-content" style={{ animationDuration }}>
         {children}
       </div>{" "}
-      {/* eslint-disable */}
+      {}
       <style jsx>{`
         ${style(color.main.secondaryLight)}
       `}</style>
