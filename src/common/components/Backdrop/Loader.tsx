@@ -1,3 +1,5 @@
+"use client";
+
 import Backdrop, { BackdropTypeMap } from "@mui/material/Backdrop";
 import CircularProgress from "@mui/material/CircularProgress";
 import { OverridableComponent } from "@mui/material/OverridableComponent";

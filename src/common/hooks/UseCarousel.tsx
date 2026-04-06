@@ -1,5 +1,6 @@
+"use client";
+
 import { useEffect, useState } from "react";
-import { useSwipeable } from "react-swipeable";
 
 export const useCarousel = (length: number) => {
   const [current, setCurrent] = useState(0);
@@ -23,8 +24,8 @@ export const useCarousel = (length: number) => {
       }
     };
   });
-
-  const handler = useSwipeable({
+  // FP find react swipeable alternative
+  const handler = () => ({
     onSwipedLeft: () => nextSlide(),
     onSwipedRight: () => prevSlide(),
   });

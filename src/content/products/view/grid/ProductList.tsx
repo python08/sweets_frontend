@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Grid } from "@mui/material";
 import { ProductsType } from "@common/temp/temp";
 import { displayFlexCenter } from "@global/global.style";
@@ -18,7 +20,10 @@ const GridViewProductList = ({ products }: ProductListType) => (
     <Box sx={displayFlexCenter}>
       <Grid container spacing={2}>
         {products.map((product: ProductsType) => (
-          <Grid item xs={12} sm={6} md={6} lg={4} xl={4} key={product.name}>
+          <Grid
+            size={{ xs: 12, sm: 6, md: 6, lg: 4, xl: 4 }}
+            key={product.name}
+          >
             <GridViewProductCard
               name={product.name}
               description={product.description}

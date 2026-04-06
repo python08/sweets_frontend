@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from "react";
 import { WhatsappShare } from "@components/WhatsappShare/WhatsappShare";
 import { color } from "@global/colors";
@@ -58,7 +60,10 @@ const ProductDetails = (props: ProductDetailsProps) => {
         <Box>
           <List>
             {brief.split("*").map((data: string) => (
-              <ListItem sx={{ padding: "0.3rem 0.3rem 0.3rem 0rem" }}>
+              <ListItem
+                sx={{ padding: "0.3rem 0.3rem 0.3rem 0rem" }}
+                key={data}
+              >
                 <FiberManualRecord
                   sx={{ fontSize: "small", marginRight: "5px" }}
                 />
@@ -77,12 +82,12 @@ const ProductDetails = (props: ProductDetailsProps) => {
       </Box>
       <Box pt="1rem">
         <Grid container>
-          <Grid item xs={6}>
+          <Grid size={{ xs: 6 }}>
             <Box height="4.4rem">
               <ProductQuantity quantity={quantity} setQuantity={setQuantity} />
             </Box>
           </Grid>
-          <Grid item xs={6}>
+          <Grid size={{ xs: 6 }}>
             <Box height="4.4rem" mt="2.1rem">
               <WhatsappShare quantity={quantity} productTitle={title} />
             </Box>

@@ -1,3 +1,5 @@
+"use client";
+
 import GridViewProductList from "@content/products/view/grid/ProductList";
 import FlexViewProductList from "@content/products/view/flex/ProductList";
 import { Box, Grid } from "@mui/material";
@@ -6,26 +8,38 @@ import { Headline } from "@components/Headline/Headline";
 import { Section } from "@content/products/constant/main";
 import { getProductByCategory } from "@content/products/utils/utils";
 import MainCarousel from "@content/carousel/MainCarousel";
+import { useProducts } from "@common/hooks/useProducts";
+import Loader from "@components/Backdrop/Loader";
+import { isEmpty } from "lodash";
+import FallBack from "@components/ErrorFallBack/FallBack";
 
 import { style } from "./style";
-import { BodyProps } from "./model";
 
-const Body = (props: BodyProps) => {
-  const { products } = props;
-  if (!products) return null;
+const Body = () => {
+  const { products, loading, hasError } = useProducts();
 
-  const ladoos = getProductByCategory(products, Categories.Ladoo);
+  if (loading) {
+    return <Loader open={loading} />;
+  }
+
+  const safeProducts = hasError ? [] : products;
+
+  if (isEmpty(safeProducts)) {
+    return <FallBack />;
+  }
+
+  const ladoos = getProductByCategory(safeProducts, Categories.Ladoo);
 
   return (
     <>
       <Grid container>
-        <Grid item xs={12}>
+        <Grid size={{ xs: 12 }}>
           <MainCarousel />
         </Grid>
       </Grid>
       <Box sx={style.main}>
         <Grid container spacing={2}>
-          <Grid item xs={12} pb="3rem">
+          <Grid size={{ xs: 12 }} pb="3rem">
             <Box sx={{ textAlign: "center" }} pb="1rem" pt="3rem">
               <Headline
                 headLine="Indulge in the Irresistible Charm of Traditional Indian Ladoo
@@ -40,12 +54,12 @@ const Body = (props: BodyProps) => {
               />
             </Box>
           </Grid>
-          <Grid item xs={12} pb="2rem">
-            <GridViewProductList products={products} />
+          <Grid size={{ xs: 12 }} pb="2rem">
+            <GridViewProductList products={safeProducts} />
           </Grid>
           {/* 
           upcoming changes
-          <Grid item xs={12}>
+          <Grid size={{ xs: 12 }}>
             <ProductCategories
               festivals={festivals}
               handleFilter={handleFilter}

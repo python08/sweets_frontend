@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  swcMinify: true,
   images: {
     remotePatterns: [
       {
@@ -11,6 +10,10 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
+  },
+  serverExternalPackages: [], // Ensure relevant packages aren't bundled incorrectly
+  experimental: {
+    serverSourceMaps: true, // Enable for better server-side traces
   },
 };
 

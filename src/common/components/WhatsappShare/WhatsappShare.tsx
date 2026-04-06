@@ -1,3 +1,5 @@
+"use client";
+
 import { WhatsappShareStyle } from "@components/styles/style";
 import { Box, Button } from "@mui/material";
 

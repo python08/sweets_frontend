@@ -1,3 +1,5 @@
+"use client";
+
 import { Box } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Loader from "@components/Backdrop/Loader";
