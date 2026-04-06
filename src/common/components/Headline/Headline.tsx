@@ -1,3 +1,5 @@
+"use client";
+
 import { color } from "@global/colors";
 import { Typography } from "@mui/material";
 

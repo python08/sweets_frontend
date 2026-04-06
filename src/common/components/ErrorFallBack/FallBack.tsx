@@ -1,3 +1,5 @@
+"use client";
+
 import { Box, Typography } from "@mui/material";
 import { color } from "@global/colors";
 import { fontWeight } from "@global/font";
