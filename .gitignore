@@ -37,3 +37,10 @@ yarn-error.log*
 next-env.d.ts
 
 GEMINI.md
+
+# Graphify files
+/graphify-out/2026-09-18/*
+/graphify-out/cache/*
+/graphify-out/*.sig
+/graphify-out/.graphify_root 
+/graphify-out/.graphify_semantic_marker
