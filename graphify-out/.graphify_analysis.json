@@ -392,73 +392,31 @@
       "src_content_main_page_header_styles_style",
       "src_content_main_page_header_styles_title"
     ],
-    "17": [
-      "next",
-      "next_config",
-      "next_config_nextconfig"
-    ],
+    "17": ["next", "next_config", "next_config_nextconfig"],
     "18": [
       "src_apis_constant_constant",
       "src_apis_constant_constant_serverurl",
       "src_apis_constant_constant_welcomevideourl"
     ],
-    "19": [
-      "airbnb_style"
-    ],
-    "20": [
-      "claude"
-    ],
-    "21": [
-      "create_next_app"
-    ],
-    "22": [
-      "eslint"
-    ],
-    "23": [
-      "eslint_install_issue"
-    ],
-    "24": [
-      "git_discussion_thread"
-    ],
-    "25": [
-      "graph_json"
-    ],
-    "26": [
-      "graph_report_md"
-    ],
-    "27": [
-      "graphify"
-    ],
-    "28": [
-      "graphify_out"
-    ],
-    "29": [
-      "husky"
-    ],
-    "30": [
-      "nextjs"
-    ],
-    "31": [
-      "nextjs_11_eslint"
-    ],
-    "32": [
-      "pages_api_hello_ts"
-    ],
-    "33": [
-      "pages_index_tsx"
-    ],
-    "34": [
-      "prettier"
-    ],
-    "35": [
-      "src_content_products_filter_by_festivals_categories"
-    ],
-    "36": [
-      "typescript"
-    ],
-    "37": [
-      "wiki_index_md"
-    ]
+    "19": ["airbnb_style"],
+    "20": ["claude"],
+    "21": ["create_next_app"],
+    "22": ["eslint"],
+    "23": ["eslint_install_issue"],
+    "24": ["git_discussion_thread"],
+    "25": ["graph_json"],
+    "26": ["graph_report_md"],
+    "27": ["graphify"],
+    "28": ["graphify_out"],
+    "29": ["husky"],
+    "30": ["nextjs"],
+    "31": ["nextjs_11_eslint"],
+    "32": ["pages_api_hello_ts"],
+    "33": ["pages_index_tsx"],
+    "34": ["prettier"],
+    "35": ["src_content_products_filter_by_festivals_categories"],
+    "36": ["typescript"],
+    "37": ["wiki_index_md"]
   },
   "cohesion": {
     "0": 0.06693877551020408,
@@ -556,10 +514,7 @@
     {
       "source": "getAllFestivals()",
       "target": "loadData()",
-      "source_files": [
-        "src/apis/festival/festival.ts",
-        "src/apis/api.ts"
-      ],
+      "source_files": ["src/apis/festival/festival.ts", "src/apis/api.ts"],
       "confidence": "EXTRACTED",
       "relation": "calls",
       "why": "peripheral node `getAllFestivals()` unexpectedly reaches hub `loadData()`"
